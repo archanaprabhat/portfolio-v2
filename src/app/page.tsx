@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Mail, Twitter, Github } from "lucide-react";
+import { Mail, Youtube, Github } from "lucide-react";
 import Newsletter from "@/components/Newsletter";
 import WorkSection from "@/components/WorkSection";
 
@@ -11,7 +11,7 @@ export default function Home() {
       <div className="mt-8 mb-6 flex items-center gap-4">
         <Image
           alt="Archana"
-          className="-outline-offset-1 size-11 select-none rounded-full outline outline-black/5 dark:outline-white/5"
+          className="size-11 select-none rounded-full outline outline-black/5 dark:outline-white/5"
           height={100}
           width={100}
           src="/profile.jpg"
@@ -39,33 +39,33 @@ export default function Home() {
         <a
           aria-label="Mail"
           className="flex h-9 cursor-pointer select-none items-center gap-1.5 will-change-[transform, colors] rounded-full bg-gray-300 pr-4 pl-[14px] font-medium transition-[colors, transform] duration-200 ease-out hover:bg-gray-400 active:scale-[0.97]"
-          href="mailto:your.email@example.com"
-          rel="noreferrer"
+          href="mailto:archanaprabhathtk@gmail.com"
           target="_blank"
         >
           <Mail className="size-[18px]" />
           Mail
         </a>
-        <a
-          aria-label="Twitter"
-          className="flex h-9 cursor-pointer select-none items-center gap-1.5 will-change-[transform, colors] rounded-full bg-gray-300 pr-4 pl-[14px] font-medium transition-[colors, transform] duration-200 ease-out hover:bg-gray-400 active:scale-[0.97]"
-          href="https://twitter.com/yourusername"
-          rel="noreferrer"
-          target="_blank"
-        >
-          <Twitter className="size-[18px]" />
-          Twitter
-        </a>
-        <a
+         <a
           aria-label="GitHub"
           className="flex h-9 cursor-pointer select-none items-center gap-1.5 will-change-[transform, colors] rounded-full bg-gray-300 pr-4 pl-[14px] font-medium transition-[colors, transform] duration-200 ease-out hover:bg-gray-400 active:scale-[0.97]"
-          href="https://github.com/yourusername"
+          href="https://github.com/archanaprabhat"
           rel="noreferrer"
           target="_blank"
         >
           <Github className="size-[18px]" />
           GitHub
         </a>
+        <a
+          aria-label="Youtube"
+          className="flex h-9 cursor-pointer select-none items-center gap-1.5 will-change-[transform, colors] rounded-full bg-gray-300 pr-4 pl-[14px] font-medium transition-[colors, transform] duration-200 ease-out hover:bg-gray-400 active:scale-[0.97]"
+          href="https://www.youtube.com/@RedemptionArch/videos"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <Youtube className="size-[18px]" />
+          Youtube
+        </a>
+       
       </div>
 
       {/* Projects Section */}
@@ -86,7 +86,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex w-full flex-col items-start justify-center px-4 pb-4 font-medium">
-              <span className="">Project Name</span>
+              <span className="">Harry Potter Sorting Hat</span>
               <span className="font-normal text-gray-1100">
                 Project description goes here
               </span>
