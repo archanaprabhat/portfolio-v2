@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { Mail, Youtube, Github } from "lucide-react";
-import Newsletter from "@/components/Newsletter";
+import { Mail, Youtube, Github, Pen } from "lucide-react";
+import Contact from "@/components/Contact";
 import WorkSection from "@/components/WorkSection";
-
+import ProjectCard from "@/components/ProjectCard";
+import SocialLink from "@/components/SocialLink";
 
 export default function Home() {
   return (
@@ -28,44 +29,35 @@ export default function Home() {
 
       {/* Bio */}
       <p className="mb-6 text-gray-1100">
-        I'm a full stack developer passionate about building elegant and
-        performant web applications. I specialize in React, Next.js, and modern
-        web technologies. I love creating seamless user experiences and writing
-        clean, maintainable code.
+        I build modern web experiences with React and Next.js that feel
+        effortless to use and thoughtfully engineered. I enjoy
+        working where design meets technology, and I care deeply about detail,
+        performance, and creating products that genuinely make people’s lives
+        easier.
       </p>
 
       {/* Social Links */}
       <div className="mt-6 flex w-full flex-wrap justify-start gap-3">
-        <a
-          aria-label="Mail"
-          className="flex h-9 cursor-pointer select-none items-center gap-1.5 will-change-[transform, colors] rounded-full bg-gray-300 pr-4 pl-[14px] font-medium transition-[colors, transform] duration-200 ease-out hover:bg-gray-400 active:scale-[0.97]"
+        <SocialLink
           href="mailto:archanaprabhathtk@gmail.com"
-          target="_blank"
-        >
-          <Mail className="size-[18px]" />
-          Mail
-        </a>
-         <a
-          aria-label="GitHub"
-          className="flex h-9 cursor-pointer select-none items-center gap-1.5 will-change-[transform, colors] rounded-full bg-gray-300 pr-4 pl-[14px] font-medium transition-[colors, transform] duration-200 ease-out hover:bg-gray-400 active:scale-[0.97]"
+          label="Mail"
+          Icon={Mail}
+        />
+        <SocialLink
           href="https://github.com/archanaprabhat"
-          rel="noreferrer"
-          target="_blank"
-        >
-          <Github className="size-[18px]" />
-          GitHub
-        </a>
-        <a
-          aria-label="Youtube"
-          className="flex h-9 cursor-pointer select-none items-center gap-1.5 will-change-[transform, colors] rounded-full bg-gray-300 pr-4 pl-[14px] font-medium transition-[colors, transform] duration-200 ease-out hover:bg-gray-400 active:scale-[0.97]"
+          label="GitHub"
+          Icon={Github}
+        />
+        <SocialLink
+          href="https://medium.com/@archanaprabhat"
+          label="Medium"
+          Icon={Pen}
+        />
+        <SocialLink
           href="https://www.youtube.com/@RedemptionArch/videos"
-          rel="noreferrer"
-          target="_blank"
-        >
-          <Youtube className="size-[18px]" />
-          Youtube
-        </a>
-       
+          label="Youtube"
+          Icon={Youtube}
+        />
       </div>
 
       {/* Projects Section */}
@@ -74,51 +66,26 @@ export default function Home() {
           Projects
         </div>
         <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2">
-          {/* Project Card 1 */}
-          <a
-            aria-label="Project 1"
-            className="flex flex-col items-center justify-center rounded-xl bg-gray-100 shadow-custom overflow-hidden transition-[colors, box-shadow] duration-200 ease-in-out will-change-transform hover:shadow-custom-hover border border-gray-300 hover:border-gray-400"
-            href="#"
-          >
-            <div className="relative flex aspect-[192/100] w-full items-center justify-center gap-2 bg-gray-100">
-              <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl shadow-custom border border-gray-300 bg-gray-200">
-                <span className="text-2xl">🚀</span>
-              </div>
-            </div>
-            <div className="flex w-full flex-col items-start justify-center px-4 pb-4 font-medium">
-              <span className="">Harry Potter Sorting Hat</span>
-              <span className="font-normal text-gray-1100">
-                Project description goes here
-              </span>
-            </div>
-          </a>
-
-          {/* Project Card 2 */}
-          <a
-            aria-label="Project 2"
-            className="flex flex-col items-center justify-center rounded-xl bg-gray-100 shadow-custom overflow-hidden transition-[colors, box-shadow] duration-200 ease-in-out will-change-transform hover:shadow-custom-hover border border-gray-300 hover:border-gray-400"
-            href="#"
-          >
-            <div className="relative flex aspect-[192/100] w-full items-center justify-center gap-2 bg-gray-100">
-              <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl shadow-custom border border-gray-300 bg-gray-200">
-                <span className="text-2xl">💻</span>
-              </div>
-            </div>
-            <div className="flex w-full flex-col items-start justify-center px-4 pb-4 font-medium">
-              <span className="">Another Project</span>
-              <span className="font-normal text-gray-1100">
-                Another project description
-              </span>
-            </div>
-          </a>
+          <ProjectCard
+            title="Harry Potter Sorting Hat"
+            emoji="⚯ ͛"
+            projectUrl="https://sorting-hat-magic.vercel.app/"
+            githubUrl="https://github.com/archanaprabhat/Harry_Potter_Sorting_Hat"
+          />
+          <ProjectCard
+            title="Consistency Tracker"
+            emoji="🗓"
+            projectUrl="https://tracker-nextjs-iqvc.vercel.app/"
+            githubUrl="https://github.com/archanaprabhat/Consistency"
+          />
         </div>
       </div>
 
       {/* Work Section */}
       <WorkSection />
 
-      {/* Newsletter */}
-      <Newsletter />
+      {/* Contact */}
+      <Contact />
 
       {/* Footer */}
       <section className="mt-16 flex w-full items-center justify-between">

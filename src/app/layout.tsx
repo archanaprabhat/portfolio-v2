@@ -11,9 +11,9 @@ const siteURL = "https://archana.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(siteURL),
 
-  title: "Archana Prabhat | Full Stack Developer",
+  title: "Archana Prabhat",
   description:
-    "Full Stack Developer specializing in React, Next.js, and modern web technologies. Building elegant and performant web applications.",
+    "Full-Stack Engineer creating web experiences",
   keywords: [
     "Archana Prabhat",
     "Full Stack Developer",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Archana Prabhat | Full Stack Developer",
+    title: "Archana Prabhat",
     description:
-      "Full Stack Developer specializing in React, Next.js, and modern web technologies.",
+      "Full-Stack Engineer creating web experiences",
     url: siteURL,
     siteName: "Archana Prabhat",
     type: "website",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Archana Prabhat | Full Stack Developer",
+    title: "Archana Prabhat",
     description:
       "Full Stack Developer specializing in React, Next.js, and modern web technologies.",
     images: ["/og-image.png"],
