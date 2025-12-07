@@ -60,7 +60,17 @@ export default function Home() {
         />
       </div>
 
-      {/* Projects Section */}
+      {/* Resume Download Section */}
+      <div className="mt-16 flex w-full justify-center">
+        <a
+          href="/Archana_resume.pdf"
+          download
+          className="inline-flex items-center rounded-lg bg-gray-1200 px-6 py-3 text-sm font-medium text-gray-100 hover:bg-gray-1100 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500"
+        >
+          Download My Resume 
+        </a>
+      </div>
+      {/* Projects Section Wrapper */}
       <div className="mt-16 w-full sm:mt-32">
         <div className="mb-5 flex w-full items-center font-medium text-gray-1200">
           Projects
@@ -80,6 +90,7 @@ export default function Home() {
           />
         </div>
       </div>
+
 
       {/* Work Section */}
       <WorkSection />

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { FileText, Boxes } from "lucide-react";
 
@@ -7,30 +8,29 @@ type WorkItem = {
     id: string;
     title: string;
     date: string;
-    category: "writing" | "component";
+    category: "career" | "writing";
     href: string;
+    target?: "_blank";
     preview: string;
-    previewDark: string;
 };
 
 const workItems: WorkItem[] = [
     {
         id: "1",
-        title: "Building Responsive Layouts",
-        date: "December 2024",
-        category: "writing",
-        href: "#",
-        preview: "📱",
-        previewDark: "📱",
+        title: "SDE",
+        date: "Jan 2024 - Present",
+        category: "career",
+        href: "https://asterisk.ad/",
+        target: "_blank",
+        preview: "/vymo.png",
     },
     {
         id: "2",
         title: "Custom Button Component",
         date: "December 2024",
-        category: "component",
+        category: "writing",
         href: "#",
         preview: "🎨",
-        previewDark: "🎨",
     },
     {
         id: "3",
@@ -39,65 +39,48 @@ const workItems: WorkItem[] = [
         category: "writing",
         href: "#",
         preview: "⚡",
-        previewDark: "⚡",
     },
     {
         id: "4",
         title: "Animated Card Component",
         date: "November 2024",
-        category: "component",
+        category: "writing",
         href: "#",
         preview: "✨",
-        previewDark: "✨",
     },
 ];
 
 export default function WorkSection() {
-    const [filter, setFilter] = useState<"all" | "writing" | "component">("all");
+    const [filter, setFilter] = useState<"career" | "writing">("career");
 
-    const filteredItems = workItems.filter((item) => {
-        if (filter === "all") return true;
-        return item.category === filter;
-    });
+    const filteredItems = workItems.filter((item) => item.category === filter);
 
     return (
         <div className="mt-16 w-full sm:mt-32">
             <div className="mb-5 flex w-full items-center font-medium text-gray-1200">Work</div>
             <div className="mb-5 flex gap-2">
                 <button
-                    aria-label="All"
-                    className={`filter-pill flex h-9 items-center justify-center gap-1.5 rounded-full font-medium px-4 ${filter === "all"
-                            ? "bg-gray-1200 text-gray-100"
-                            : "bg-gray-300 text-gray-1200 hover:bg-gray-400"
+                    aria-label="Career"
+                    className={`filter-pill ${filter === "career"
+                        ? "bg-gray-1200 text-gray-100"
+                        : "bg-gray-300 text-gray-1200 hover:bg-gray-400"
                         }`}
                     type="button"
-                    onClick={() => setFilter("all")}
+                    onClick={() => setFilter("career")}
                 >
-                    All
+                    Career
                 </button>
                 <button
                     aria-label="Writing"
-                    className={`filter-pill flex h-9 items-center justify-center gap-1.5 rounded-full font-medium pr-4 pl-[14px] ${filter === "writing"
-                            ? "bg-gray-1200 text-gray-100"
-                            : "bg-gray-300 text-gray-1200 hover:bg-gray-400"
+                    className={`filter-pill ${filter === "writing"
+                        ? "bg-gray-1200 text-gray-100"
+                        : "bg-gray-300 text-gray-1200 hover:bg-gray-400"
                         }`}
                     type="button"
                     onClick={() => setFilter("writing")}
                 >
                     <FileText className="size-[18px]" />
                     Writing
-                </button>
-                <button
-                    aria-label="Components"
-                    className={`filter-pill flex h-9 items-center justify-center gap-1.5 rounded-full font-medium pr-4 pl-[14px] ${filter === "component"
-                            ? "bg-gray-1200 text-gray-100"
-                            : "bg-gray-300 text-gray-1200 hover:bg-gray-400"
-                        }`}
-                    type="button"
-                    onClick={() => setFilter("component")}
-                >
-                    <Boxes className="size-[18px]" />
-                    Components
                 </button>
             </div>
             <div className="flex flex-col gap-2">
@@ -107,11 +90,21 @@ export default function WorkSection() {
                         aria-label={item.title}
                         className="group -mx-3 flex h-20 items-center justify-center gap-4 rounded-xl py-3 pr-4 pl-3 hover:bg-gray-200"
                         href={item.href}
+                        target={item.target ?? "_blank"}
+                        rel="noopener noreferrer"
                     >
-                        <div className="relative aspect-[158/100] h-full shrink-0 overflow-hidden rounded-lg bg-gray-100 shadow-custom border border-gray-300">
-                            <div className="flex h-full w-full items-center justify-center text-3xl">
-                                {item.preview}
-                            </div>
+                        <div className="relative aspect-[158/100] h-full shrink-0 overflow-hidden rounded-lg bg-gray-100 shadow-custom border border-gray-300 flex items-center justify-center">
+                            {item.preview.startsWith('/') ? (
+                                <Image
+                                    src={item.preview}
+                                    alt={item.title}
+                                    width={80}
+                                    height={50}
+                                    className="object-cover"
+                                />
+                            ) : (
+                                <span className="text-3xl">{item.preview}</span>
+                            )}
                         </div>
                         <div className="flex w-full min-w-0 flex-col items-start justify-center">
                             <span className="w-full truncate font-medium text-gray-1200">{item.title}</span>
