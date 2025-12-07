@@ -1,3 +1,5 @@
+"use client";
+
 import { Github } from "lucide-react";
 
 interface ProjectCardProps {
@@ -15,11 +17,23 @@ export default function ProjectCard({
   githubUrl,
   description,
 }: ProjectCardProps) {
+  const handleCardClick = () => {
+    window.open(projectUrl, '_blank', 'noopener,noreferrer');
+  };
+
   return (
-    <a
+    <div
+      role="button"
+      tabIndex={0}
       aria-label={title}
-      className="project-card"
-      href={projectUrl}
+      className="project-card cursor-pointer"
+      onClick={handleCardClick}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleCardClick();
+        }
+      }}
     >
       <div className="relative flex aspect-[192/100] w-full items-center justify-center gap-2 bg-gray-100">
         <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl shadow-custom border border-gray-300 bg-gray-200">
@@ -37,11 +51,12 @@ export default function ProjectCard({
             className="font-normal text-gray-1100 self-end"
             target="_blank"
             rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
           >
             <Github />
           </a>
         )}
       </div>
-    </a>
+    </div>
   );
 }
