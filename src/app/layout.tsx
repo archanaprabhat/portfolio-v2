@@ -6,7 +6,7 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const siteURL = "https://archana.vercel.app";
+const siteURL = "https://archana-prabhat.vercel.app/";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteURL),
