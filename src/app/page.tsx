@@ -39,7 +39,7 @@ export default function Home() {
       {/* Social Links */}
       <div className="mt-6 flex w-full flex-wrap justify-start gap-3">
         <SocialLink
-          href="/Archana_resume.pdf"
+          href="Archana_Resume.pdf"
           label="Resume"
           Icon={ArrowDownToLine}
         />
