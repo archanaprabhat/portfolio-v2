@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Mail, Youtube, Github, Pen } from "lucide-react";
+import { Mail, Youtube, Github, Pen, ArrowDownToLine, } from "lucide-react";
 import Contact from "@/components/Contact";
 import WorkSection from "@/components/WorkSection";
 import ProjectCard from "@/components/ProjectCard";
@@ -22,7 +22,7 @@ export default function Home() {
             Archana Prabhat
           </span>
           <span className="whitespace-nowrap font-medium text-gray-1100 leading-snug">
-            Full Stack Developer
+            Frontend Developer
           </span>
         </div>
       </div>
@@ -38,6 +38,11 @@ export default function Home() {
 
       {/* Social Links */}
       <div className="mt-6 flex w-full flex-wrap justify-start gap-3">
+        <SocialLink
+          href="/Archana_resume.pdf"
+          label="Resume"
+          Icon={ArrowDownToLine}
+        />
         <SocialLink
           href="mailto:archanaprabhathtk@gmail.com"
           label="Mail"
@@ -60,16 +65,7 @@ export default function Home() {
         />
       </div>
 
-      {/* Resume Download Section */}
-      <div className="mt-16 flex w-full justify-center">
-        <a
-          href="/Archana_resume.pdf"
-          download
-          className="inline-flex items-center rounded-lg bg-gray-1200 px-6 py-3 text-sm font-medium text-gray-100 hover:bg-gray-1100 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500"
-        >
-          Download My Resume 
-        </a>
-      </div>
+
       {/* Projects Section Wrapper */}
       <div className="mt-16 w-full sm:mt-32">
         <div className="mb-5 flex w-full items-center font-medium text-gray-1200">
@@ -87,6 +83,42 @@ export default function Home() {
             emoji="🗓"
             projectUrl="https://tracker-nextjs-iqvc.vercel.app/"
             githubUrl="https://github.com/archanaprabhat/Consistency"
+          />
+          <ProjectCard
+            title="Watchlistr"
+            emoji="𓁺"
+            projectUrl="https://cinmatic.vercel.app/"
+            githubUrl="https://github.com/archanaprabhat/CineMania"
+          />
+          <ProjectCard
+            title="Chat App"  
+            emoji="✉︎"
+            projectUrl="https://www.youtube.com/shorts/--Hswuwx7jw"
+            githubUrl="https://github.com/archanaprabhat/ChatApp"
+          />
+          <ProjectCard
+            title="Real Time Tracker"
+            emoji="⚲"
+            projectUrl="https://www.youtube.com/watch?v=rFD_K5pVOc0"
+            githubUrl="https://github.com/archanaprabhat/RealTime-Tracker"
+          />
+          <ProjectCard
+            title="Chess"
+            emoji="♟"
+            projectUrl="https://www.youtube.com/watch?v=jX7EPPMupLs"
+            githubUrl="https://github.com/archanaprabhat/chess"
+          />
+          <ProjectCard
+            title="Artificium"
+            emoji="☯︎"
+            projectUrl="https://artificium-chi.vercel.app/"
+            githubUrl="https://github.com/archanaprabhat/Artificium"
+          />
+          <ProjectCard
+            title="Workforce Chart"
+            emoji="𓂃✍︎"
+            projectUrl="https://workforce-chart.vercel.app/"
+            githubUrl="https://github.com/archanaprabhat/Workforce-Chart"
           />
         </div>
       </div>
