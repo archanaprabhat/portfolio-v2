@@ -73,10 +73,21 @@ export default function Home() {
         </div>
         <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2">
           <ProjectCard
+            title="Sunva | People+AI"
+            emoji="𓂈"
+            projectUrl="https://www.youtube.com/watch?v=pF41AyUhE7w"
+          />
+          <ProjectCard
             title="Harry Potter Sorting Hat"
             emoji="⚯ ͛"
             projectUrl="https://sorting-hat-magic.vercel.app/"
             githubUrl="https://github.com/archanaprabhat/Harry_Potter_Sorting_Hat"
+          />
+          <ProjectCard
+            title="Watchlistr"
+            emoji="𓁺"
+            projectUrl="https://cinmatic.vercel.app/"
+            githubUrl="https://github.com/archanaprabhat/CineMania"
           />
           <ProjectCard
             title="Consistency Tracker"
@@ -85,10 +96,10 @@ export default function Home() {
             githubUrl="https://github.com/archanaprabhat/Consistency"
           />
           <ProjectCard
-            title="Watchlistr"
-            emoji="𓁺"
-            projectUrl="https://cinmatic.vercel.app/"
-            githubUrl="https://github.com/archanaprabhat/CineMania"
+            title="Dataverse"
+            emoji="⛁"
+            projectUrl="https://dataverse-nu.vercel.app/"
+            githubUrl="https://github.com/archanaprabhat/dataverse-cloud-erp"
           />
           <ProjectCard
             title="Chat App"  
