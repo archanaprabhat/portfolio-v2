@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Mail, Youtube, Github, Pen, ArrowDownToLine, } from "lucide-react";
+import { Mail, Youtube, Github, Pen, ArrowDownToLine, Codepen } from "lucide-react";
 import Contact from "@/components/Contact";
 import WorkSection from "@/components/WorkSection";
 import ProjectCard from "@/components/ProjectCard";
@@ -59,6 +59,11 @@ export default function Home() {
           Icon={Pen}
         />
         <SocialLink
+          href="https://codepen.io/archanaprabhat"
+          label="Codepen"
+          Icon={Codepen}
+        />
+        <SocialLink
           href="https://www.youtube.com/@RedemptionArch/videos"
           label="Youtube"
           Icon={Youtube}
@@ -76,6 +81,12 @@ export default function Home() {
             title="Sunva | People+AI"
             emoji="𓂈"
             projectUrl="https://www.youtube.com/watch?v=pF41AyUhE7w"
+          />
+          <ProjectCard
+            title="Voice Notes"
+            emoji="🗣"
+            projectUrl="https://archanaprabhat.github.io/VoiceNotes/"
+            githubUrl="https://github.com/archanaprabhat/VoiceNotes?tab=readme-ov-file"
           />
           <ProjectCard
             title="Harry Potter Sorting Hat"
