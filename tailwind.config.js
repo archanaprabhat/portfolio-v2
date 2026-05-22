@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,15 +9,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "gray-background": "#000000",
-        "gray-1200": "#ebebeb",
-        "gray-1100": "#b5b5b5",
-        "gray-1000": "#737373",
-        "gray-800": "#525252",
-        "gray-400": "#404040",
-        "gray-300": "#262626",
-        "gray-200": "#1f1f1f",
-        "gray-100": "#171717",
+        "gray-background": "var(--gray-background)",
+        "gray-1200": "var(--gray-1200)",
+        "gray-1100": "var(--gray-1100)",
+        "gray-1000": "var(--gray-1000)",
+        "gray-800": "var(--gray-800)",
+        "gray-400": "var(--gray-400)",
+        "gray-300": "var(--gray-300)",
+        "gray-200": "var(--gray-200)",
+        "gray-100": "var(--gray-100)",
       },
       boxShadow: {
         custom: "0 0 0 1px rgba(255, 255, 255, 0.1)",

@@ -4,27 +4,31 @@ import Contact from "@/components/Contact";
 import WorkSection from "@/components/WorkSection";
 import ProjectCard from "@/components/ProjectCard";
 import SocialLink from "@/components/SocialLink";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
     <main className="mx-auto max-w-[692px] px-6 py-12 leading-relaxed sm:py-16">
       {/* Header Section */}
-      <div className="mt-8 mb-6 flex items-center gap-4">
-        <Image
-          alt="Archana"
-          className="size-11 select-none rounded-full outline outline-black/5 dark:outline-white/5"
-          height={100}
-          width={100}
-          src="/profile.jpg"
-        />
-        <div className="flex flex-col items-start justify-center">
-          <span className="font-medium text-gray-1200 leading-snug">
-            Archana Prabhat
-          </span>
-          <span className="whitespace-nowrap font-medium text-gray-1100 leading-snug">
-            Frontend Developer
-          </span>
+      <div className="mt-8 mb-6 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <Image
+            alt="Archana"
+            className="size-11 select-none rounded-full outline outline-black/5 dark:outline-white/5"
+            height={100}
+            width={100}
+            src="/profile.jpg"
+          />
+          <div className="flex flex-col items-start justify-center">
+            <span className="font-medium text-gray-1200 leading-snug">
+              Archana Prabhat
+            </span>
+            <span className="whitespace-nowrap font-medium text-gray-1100 leading-snug">
+              Frontend Developer
+            </span>
+          </div>
         </div>
+        <ThemeToggle />
       </div>
 
       {/* Bio */}
