@@ -11,6 +11,9 @@ import dataverseThumbnail from "@/assets/Dataverse.png"
 import sunvaThumbnail from "@/assets/SUNVA.png"
 import harryPotterThumbnail from "@/assets/harry potter-thumb.png"
 import chessThumbnail from "@/assets/chess.png"
+import habitThumbnail from "@/assets/habit-tracker.webp"
+import chatThumbnail from "@/assets/chat.webp"
+
 
 export default function Home() {
   return (
@@ -23,7 +26,7 @@ export default function Home() {
             className="size-11 select-none rounded-full outline outline-black/5 dark:outline-white/5"
             height={100}
             width={100}
-            src="/profile.jpg"
+            src="/profile.png"
           />
           <div className="flex flex-col items-start justify-center">
             <span className="font-medium text-gray-1200 leading-snug">
@@ -133,7 +136,7 @@ export default function Home() {
           />
           <ProjectCard
             title="Consistency Tracker"
-            emoji="🗓"
+            imageSrc={habitThumbnail}
             projectUrl="https://tracker-nextjs-iqvc.vercel.app/"
             githubUrl="https://github.com/archanaprabhat/Consistency"
           />
@@ -145,7 +148,7 @@ export default function Home() {
           />
           <ProjectCard
             title="Chat App"
-            emoji="✉︎"
+            imageSrc={chatThumbnail}
             projectUrl="https://www.youtube.com/shorts/--Hswuwx7jw"
             githubUrl="https://github.com/archanaprabhat/ChatApp"
           />
