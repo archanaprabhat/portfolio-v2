@@ -5,6 +5,12 @@ import WorkSection from "@/components/WorkSection";
 import ProjectCard from "@/components/ProjectCard";
 import SocialLink from "@/components/SocialLink";
 import ThemeToggle from "@/components/ThemeToggle";
+import voiceNotesThumbnail from "@/assets/voicenotes_thumbnail.png";
+import watchlisterThumbnail from "@/assets/movieValut-thumb.png"
+import dataverseThumbnail from "@/assets/Dataverse.png"
+import sunvaThumbnail from "@/assets/SUNVA.png"
+import harryPotterThumbnail from "@/assets/harry potter-thumb.png"
+import chessThumbnail from "@/assets/chess.png"
 
 export default function Home() {
   return (
@@ -82,25 +88,46 @@ export default function Home() {
         </div>
         <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2">
           <ProjectCard
+            title="Voice Notes"
+            imageSrc={voiceNotesThumbnail}
+            projectUrl="https://archanaprabhat.github.io/VoiceNotes/"
+            githubUrl="https://github.com/archanaprabhat/VoiceNotes?tab=readme-ov-file"
+            demoVideo="/voicenotes_demo.mp4"
+            techStack={[
+              {
+                category: "Frontend",
+                items: "HTML5, CSS3 (glassmorphism, animations, Grid, Flexbox), Vanilla JavaScript (ES6+ classes, async/await, Promises), SVGs from Figma and Lucide React",
+              },
+              {
+                category: "Web APIs",
+                items: "MediaRecorder, Web Audio (AudioContext, AnalyserNode), Canvas, IndexedDB, Fetch",
+              },
+              {
+                category: "External Services",
+                items: "Groq API (Whisper-large-v3, Llama 3.3 70B Versatile)",
+              },
+            ]}
+          />
+          <ProjectCard
+            title="Dataverse"
+            imageSrc={dataverseThumbnail}
+            projectUrl="https://dataverse-nu.vercel.app/"
+            githubUrl="https://github.com/archanaprabhat/dataverse-cloud-erp"
+          />
+          <ProjectCard
             title="Sunva | People+AI"
-            emoji="𓂈"
+            imageSrc={sunvaThumbnail}
             projectUrl="https://www.youtube.com/watch?v=pF41AyUhE7w"
           />
           <ProjectCard
-            title="Voice Notes"
-            emoji="🗣"
-            projectUrl="https://archanaprabhat.github.io/VoiceNotes/"
-            githubUrl="https://github.com/archanaprabhat/VoiceNotes?tab=readme-ov-file"
-          />
-          <ProjectCard
-            title="Harry Potter Sorting Hat"
-            emoji="⚯ ͛"
-            projectUrl="https://sorting-hat-magic.vercel.app/"
-            githubUrl="https://github.com/archanaprabhat/Harry_Potter_Sorting_Hat"
+            title="Chess"
+            imageSrc={chessThumbnail}
+            projectUrl="https://www.youtube.com/watch?v=jX7EPPMupLs"
+            githubUrl="https://github.com/archanaprabhat/chess"
           />
           <ProjectCard
             title="Watchlistr"
-            emoji="𓁺"
+            imageSrc={watchlisterThumbnail}
             projectUrl="https://cinmatic.vercel.app/"
             githubUrl="https://github.com/archanaprabhat/CineMania"
           />
@@ -111,13 +138,13 @@ export default function Home() {
             githubUrl="https://github.com/archanaprabhat/Consistency"
           />
           <ProjectCard
-            title="Dataverse"
-            emoji="⛁"
-            projectUrl="https://dataverse-nu.vercel.app/"
-            githubUrl="https://github.com/archanaprabhat/dataverse-cloud-erp"
+            title="Harry Potter Sorting Hat"
+            imageSrc={harryPotterThumbnail}
+            projectUrl="https://sorting-hat-magic.vercel.app/"
+            githubUrl="https://github.com/archanaprabhat/Harry_Potter_Sorting_Hat"
           />
           <ProjectCard
-            title="Chat App"  
+            title="Chat App"
             emoji="✉︎"
             projectUrl="https://www.youtube.com/shorts/--Hswuwx7jw"
             githubUrl="https://github.com/archanaprabhat/ChatApp"
@@ -127,12 +154,6 @@ export default function Home() {
             emoji="⚲"
             projectUrl="https://www.youtube.com/watch?v=rFD_K5pVOc0"
             githubUrl="https://github.com/archanaprabhat/RealTime-Tracker"
-          />
-          <ProjectCard
-            title="Chess"
-            emoji="♟"
-            projectUrl="https://www.youtube.com/watch?v=jX7EPPMupLs"
-            githubUrl="https://github.com/archanaprabhat/chess"
           />
           <ProjectCard
             title="Artificium"
