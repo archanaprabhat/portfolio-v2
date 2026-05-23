@@ -21,13 +21,15 @@ export default function Home() {
       {/* Header Section */}
       <div className="mt-8 mb-6 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <Image
-            alt="Archana"
-            className="size-11 select-none rounded-full outline outline-black/5 dark:outline-white/5"
-            height={100}
-            width={100}
-            src="/profile.png"
-          />
+          <a href="/profile.png" target="_blank" rel="noreferrer" className="shrink-0">
+            <Image
+              alt="Archana"
+              className="size-11 select-none rounded-full object-cover outline outline-black/5 dark:outline-white/5 transition-transform hover:scale-105"
+              height={100}
+              width={100}
+              src="/profile.png"
+            />
+          </a>
           <div className="flex flex-col items-start justify-center">
             <span className="font-medium text-gray-1200 leading-snug">
               Archana Prabhat
