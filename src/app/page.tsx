@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Mail, Youtube, Github, Pen, ArrowDownToLine, Codepen } from "lucide-react";
 import Contact from "@/components/Contact";
 import WorkSection from "@/components/WorkSection";
+import MiscSection from "@/components/MiscSection";
 import ProjectCard from "@/components/ProjectCard";
 import SocialLink from "@/components/SocialLink";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -13,6 +14,8 @@ import harryPotterThumbnail from "@/assets/harry potter-thumb.png"
 import chessThumbnail from "@/assets/chess.png"
 import habitThumbnail from "@/assets/habit-tracker.webp"
 import chatThumbnail from "@/assets/chat.png"
+import artificiumThumbnail from "@/assets/Artificium.jpg"
+import mapThumbnail from "@/assets/map.png"
 
 
 export default function Home() {
@@ -57,11 +60,6 @@ export default function Home() {
           href="Archana_Resume.pdf"
           label="Resume"
           Icon={ArrowDownToLine}
-        />
-        <SocialLink
-          href="mailto:archanaprabhathtk@gmail.com"
-          label="Mail"
-          Icon={Mail}
         />
         <SocialLink
           href="https://github.com/archanaprabhat"
@@ -156,13 +154,13 @@ export default function Home() {
           />
           <ProjectCard
             title="Real Time Tracker"
-            emoji="⚲"
+            imageSrc={mapThumbnail}
             projectUrl="https://www.youtube.com/watch?v=rFD_K5pVOc0"
             githubUrl="https://github.com/archanaprabhat/RealTime-Tracker"
           />
           <ProjectCard
             title="Artificium"
-            emoji="☯︎"
+            imageSrc={artificiumThumbnail}
             projectUrl="https://artificium-chi.vercel.app/"
             githubUrl="https://github.com/archanaprabhat/Artificium"
           />
@@ -173,6 +171,9 @@ export default function Home() {
       {/* Work Section */}
       <WorkSection />
 
+      {/* Misc Section */}
+      <MiscSection />
+
       {/* Contact */}
       <Contact />
 
@@ -181,6 +182,11 @@ export default function Home() {
         <p className="select-none rounded-full bg-gray-300 px-3 py-1 font-medium text-gray-1100 text-sm">
           v1.0
         </p>
+        <SocialLink
+          href="mailto:archanaprabhathtk@gmail.com"
+          label="Email"
+          Icon={Mail}
+        />
       </section>
     </main>
   );
