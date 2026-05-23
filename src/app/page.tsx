@@ -12,7 +12,7 @@ import sunvaThumbnail from "@/assets/SUNVA.png"
 import harryPotterThumbnail from "@/assets/harry potter-thumb.png"
 import chessThumbnail from "@/assets/chess.png"
 import habitThumbnail from "@/assets/habit-tracker.webp"
-import chatThumbnail from "@/assets/chat.webp"
+import chatThumbnail from "@/assets/chat.png"
 
 
 export default function Home() {
@@ -91,7 +91,7 @@ export default function Home() {
         </div>
         <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2">
           <ProjectCard
-            title="Voice Notes"
+            title="Voice Notes Clone"
             imageSrc={voiceNotesThumbnail}
             projectUrl="https://archanaprabhat.github.io/VoiceNotes/"
             githubUrl="https://github.com/archanaprabhat/VoiceNotes?tab=readme-ov-file"
@@ -163,12 +163,6 @@ export default function Home() {
             emoji="☯︎"
             projectUrl="https://artificium-chi.vercel.app/"
             githubUrl="https://github.com/archanaprabhat/Artificium"
-          />
-          <ProjectCard
-            title="Workforce Chart"
-            emoji="𓂃✍︎"
-            projectUrl="https://workforce-chart.vercel.app/"
-            githubUrl="https://github.com/archanaprabhat/Workforce-Chart"
           />
         </div>
       </div>

@@ -57,15 +57,15 @@ export default function ProjectModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative flex max-h-[90vh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-gray-300 bg-gray-100 shadow-2xl dark:border-gray-800 dark:bg-gray-900"
+            className="relative flex max-h-[90vh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl border border-gray-300 bg-gray-background shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-gray-300 px-6 py-4 dark:border-gray-800">
+            <div className="flex items-center justify-between border-b border-gray-300 px-6 py-4">
               <h2 className="text-xl font-medium text-gray-1200">{title}</h2>
               <button
                 onClick={onClose}
-                className="rounded-full p-2 text-gray-1100 transition-colors hover:bg-gray-300 hover:text-gray-1200 dark:hover:bg-gray-800"
+                className="rounded-full p-2 text-gray-1100 transition-colors hover:bg-gray-300 hover:text-gray-1200"
                 aria-label="Close modal"
               >
                 <X size={20} />
@@ -95,7 +95,7 @@ export default function ProjectModal({
                     {techStack.map((stack, idx) => (
                       <div
                         key={idx}
-                        className="rounded-xl border border-gray-300 bg-gray-200 p-4 dark:border-gray-800 dark:bg-gray-800/50"
+                        className="rounded-xl border border-gray-300 bg-gray-100 p-4"
                       >
                         <h4 className="mb-2 font-medium text-gray-1100">
                           {stack.category}
@@ -111,12 +111,12 @@ export default function ProjectModal({
             </div>
 
             {/* Footer */}
-            <div className="flex justify-end border-t border-gray-300 p-4 px-6 dark:border-gray-800">
+            <div className="flex justify-end border-t border-gray-300 p-4 px-6">
               <a
                 href={projectUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 rounded-full bg-gray-1200 px-6 py-2.5 font-medium text-gray-100 transition-transform hover:scale-[1.02] active:scale-[0.98] dark:bg-white dark:text-black"
+                className="flex items-center gap-2 rounded-full bg-gray-1200 px-6 py-2.5 font-medium text-gray-background transition-transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span>Live</span>
                 <ExternalLink size={16} />
