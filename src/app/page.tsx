@@ -16,6 +16,7 @@ import habitThumbnail from "@/assets/habit-tracker.webp"
 import chatThumbnail from "@/assets/chat.png"
 import artificiumThumbnail from "@/assets/Artificium.jpg"
 import mapThumbnail from "@/assets/map.png"
+import securityThumbnail from "@/assets/securityVul.png"
 
 
 export default function Home() {
@@ -91,6 +92,26 @@ export default function Home() {
             imageSrc={voiceNotesThumbnail}
             projectUrl="https://archanaprabhat.github.io/VoiceNotes/"
             githubUrl="https://github.com/archanaprabhat/VoiceNotes?tab=readme-ov-file"
+            demoVideo="/voicenotes_demo.mp4"
+            techStack={[
+              {
+                category: "Frontend",
+                items: "HTML5, CSS3 (glassmorphism, animations, Grid, Flexbox), Vanilla JavaScript (ES6+ classes, async/await, Promises), SVGs from Figma and Lucide React",
+              },
+              {
+                category: "Web APIs",
+                items: "MediaRecorder, Web Audio (AudioContext, AnalyserNode), Canvas, IndexedDB, Fetch",
+              },
+              {
+                category: "External Services",
+                items: "Groq API (Whisper-large-v3, Llama 3.3 70B Versatile), Supabase",
+              },
+            ]}
+          />
+          <ProjectCard
+            title="Bypassing paywall: Chrome Extension"
+            imageSrc={securityThumbnail}
+            projectUrl="https://archanaprabhat.github.io/VoiceNotes/"
             demoVideo="/voicenotes_demo.mp4"
             techStack={[
               {
