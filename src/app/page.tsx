@@ -47,11 +47,7 @@ export default function Home() {
 
       {/* Bio */}
       <p className="mb-6 text-gray-1100">
-        I build modern web experiences with React and Next.js that feel
-        effortless to use and thoughtfully engineered. I enjoy
-        working where design meets technology, and I care deeply about detail,
-        performance, and creating products that genuinely make people’s lives
-        easier.
+        Building thoughtfully engineered, high-performance React and Next.js experiences, with a sharp eye for design and a focus on products that genuinely make life easier, fueled by curiosity and kaizen.
       </p>
 
       {/* Social Links */}
@@ -107,7 +103,7 @@ export default function Home() {
               },
               {
                 category: "External Services",
-                items: "Groq API (Whisper-large-v3, Llama 3.3 70B Versatile)",
+                items: "Groq API (Whisper-large-v3, Llama 3.3 70B Versatile), Supabase",
               },
             ]}
           />
@@ -123,7 +119,7 @@ export default function Home() {
             projectUrl="https://www.youtube.com/watch?v=pF41AyUhE7w"
           />
           <ProjectCard
-            title="Chess"
+            title="Peer-to-Peer Chess"
             imageSrc={chessThumbnail}
             projectUrl="https://www.youtube.com/watch?v=jX7EPPMupLs"
             githubUrl="https://github.com/archanaprabhat/chess"
@@ -133,6 +129,21 @@ export default function Home() {
             imageSrc={watchlisterThumbnail}
             projectUrl="https://cinmatic.vercel.app/"
             githubUrl="https://github.com/archanaprabhat/CineMania"
+            demoVideo="/raftlabs_demo.mp4"
+            techStack={[
+              {
+                category: "Frontend",
+                items: "Next.js 14 (App Router), TypeScript, Tailwind CSS 4, Framer Motion, Lucide React",
+              },
+              {
+                category: "Data & Storage",
+                items: "IndexedDB (Watchlist persistence), Static JSON via SSG, Simulated Internal API",
+              },
+              {
+                category: "External Services",
+                items: "TMDB (The Movie Database) API and CDN for assets",
+              },
+            ]}
           />
           <ProjectCard
             title="Consistency Tracker"
@@ -147,7 +158,7 @@ export default function Home() {
             githubUrl="https://github.com/archanaprabhat/Harry_Potter_Sorting_Hat"
           />
           <ProjectCard
-            title="Chat App"
+            title="Socket.IO Chat App"
             imageSrc={chatThumbnail}
             projectUrl="https://www.youtube.com/shorts/--Hswuwx7jw"
             githubUrl="https://github.com/archanaprabhat/ChatApp"

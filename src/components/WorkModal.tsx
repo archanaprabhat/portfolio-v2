@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export interface WorkMediaItem {
-  type: "image" | "video" | "pdf";
   src: string;
   caption?: string;
 }
@@ -105,30 +104,12 @@ export default function WorkModal({ isOpen, onClose, data }: WorkModalProps) {
                 <div className="mb-8 flex flex-col items-center">
                   <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl bg-gray-200 border border-gray-300">
                     
-                    {data.media[currentMediaIndex].type === "image" && (
-                      <Image
-                        src={data.media[currentMediaIndex].src}
-                        alt={data.media[currentMediaIndex].caption || "Work image"}
-                        fill
-                        className="object-contain"
-                      />
-                    )}
-                    {data.media[currentMediaIndex].type === "video" && (
-                      <video
-                        src={data.media[currentMediaIndex].src}
-                        controls
-                        className="h-full w-full object-contain"
-                        autoPlay
-                        playsInline
-                      />
-                    )}
-                    {data.media[currentMediaIndex].type === "pdf" && (
-                      <iframe
-                        src={`${data.media[currentMediaIndex].src}#toolbar=0`}
-                        className="h-full w-full"
-                        title="PDF Viewer"
-                      />
-                    )}
+                    <Image
+                      src={data.media[currentMediaIndex].src}
+                      alt={data.media[currentMediaIndex].caption || "Work image"}
+                      fill
+                      className="object-contain"
+                    />
 
                     {/* Navigation Buttons */}
                     {data.media.length > 1 && (
@@ -149,7 +130,7 @@ export default function WorkModal({ isOpen, onClose, data }: WorkModalProps) {
                     )}
                   </div>
                   {/* Caption */}
-                  {data.media[currentMediaIndex].caption && (
+                  {data.media[currentMediaIndex]?.caption && (
                     <p className="mt-3 text-sm font-medium text-gray-1100">
                       {data.media[currentMediaIndex].caption}
                     </p>
