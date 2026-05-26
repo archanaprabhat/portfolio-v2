@@ -64,14 +64,14 @@ export default function Home() {
           Icon={Github}
         />
         <SocialLink
-          href="https://medium.com/@archanaprabhat"
-          label="Medium"
-          Icon={Pen}
-        />
-        <SocialLink
           href="https://codepen.io/archanaprabhat"
           label="Codepen"
           Icon={Codepen}
+        />
+        <SocialLink
+          href="https://medium.com/@archanaprabhat"
+          label="Medium"
+          Icon={Pen}
         />
         <SocialLink
           href="https://www.youtube.com/@RedemptionArch/videos"
