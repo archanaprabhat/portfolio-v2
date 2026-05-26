@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export interface TechStackItem {
   category: string;
@@ -26,6 +26,8 @@ export default function ProjectModal({
   techStack,
   projectUrl,
 }: ProjectModalProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   // Prevent scrolling on body when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -37,6 +39,20 @@ export default function ProjectModal({
       document.body.style.overflow = "unset";
     };
   }, [isOpen]);
+
+  // Pause video when tab/app goes to background to prevent WebProcess crashes/glitches on mobile devices
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden && videoRef.current) {
+        videoRef.current.pause();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
 
   return (
     <AnimatePresence>
@@ -77,11 +93,13 @@ export default function ProjectModal({
               {demoVideo && (
                 <div className="mb-8 overflow-hidden rounded-xl bg-black">
                   <video
+                    ref={videoRef}
                     src={demoVideo}
                     controls
                     className="w-full"
                     autoPlay
                     playsInline
+                    muted
                   >
                     Your browser does not support the video tag.
                   </video>

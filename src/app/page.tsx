@@ -91,7 +91,6 @@ export default function Home() {
             title="Voice Notes Clone"
             imageSrc={voiceNotesThumbnail}
             projectUrl="https://archanaprabhat.github.io/VoiceNotes/"
-            githubUrl="https://github.com/archanaprabhat/VoiceNotes?tab=readme-ov-file"
             demoVideo="/voicenotes_demo.mp4"
             techStack={[
               {
