@@ -110,20 +110,13 @@ export default function Home() {
           <ProjectCard
             title="Bypassing paywall: Chrome Extension"
             imageSrc={securityThumbnail}
-            projectUrl="https://archanaprabhat.github.io/VoiceNotes/"
-            demoVideo="/voicenotes_demo.mp4"
+            projectUrl="https://www.youtube.com/watch?v=3Xnf5V6NmL8"
+            demoImage="/manorama.png"
+            description="Identified a security vulnerability in Manorama Media's online magazine platform that allowed premium content downloads by bypassing access controls. Built a private Chrome extension as a proof of concept using content scripting, DOM interaction, and request manipulation to demonstrate the exploit, and responsibly reported the issue to the organization."
             techStack={[
               {
-                category: "Frontend",
-                items: "HTML5, CSS3 (glassmorphism, animations, Grid, Flexbox), Vanilla JavaScript (ES6+ classes, async/await, Promises), SVGs from Figma and Lucide React",
-              },
-              {
-                category: "Web APIs",
-                items: "MediaRecorder, Web Audio (AudioContext, AnalyserNode), Canvas, IndexedDB, Fetch",
-              },
-              {
-                category: "External Services",
-                items: "Groq API (Whisper-large-v3, Llama 3.3 70B Versatile), Supabase",
+                category: "Tech",
+                items: "Chrome Extension (Manifest v3, content scripts, background workers, Chrome APIs, DOM interaction, CSP/CORS, Chrome DevTools, JavaScript/TypeScript)",
               },
             ]}
           />

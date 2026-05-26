@@ -35,6 +35,23 @@ const workItems: WorkItem[] = [
         }
     },
     {
+        id: "3",
+        title: "Frontend Volunteer",
+        company: "People+AI",
+        date: "Jan 2025 - Mar 2025",
+        category: "career",
+        preview: "/p+ai.jpeg",
+        description: "Building accessible UI for the deaf community",
+        modalData: {
+            title: "Frontend Volunteer",
+            company: "People+AI",
+            media: [
+                { src: "/People+ai/IMG-20250308-WA0014.jpg", caption: "GopiEattan and Team" },
+                { src: "/People+ai/IMG-20250308-WA0020.jpg", caption: "😅" },
+            ]
+        }
+    },
+    {
         id: "2",
         title: "Software Development Engineer",
         company: "Vymo",
@@ -57,28 +74,12 @@ const workItems: WorkItem[] = [
             techStack: "JavaScript(ES6), TypeScript, React.js, Node.js, Express.js, Microservices, REST APIs, JWT, OAuth, MongoDB/Mongoose, Airflow, SFTP, WebSockets, Version control(Git), Jira, Agile Scrum teams"
         }
     },
-    {
-        id: "3",
-        title: "Frontend Volunteer",
-        company: "People+AI",
-        date: "Jan 2024 - Mar 2025",
-        category: "career",
-        preview: "/p+ai.jpeg",
-        description: "Building accessible UI for the deaf community",
-        modalData: {
-            title: "Frontend Volunteer",
-            company: "People+AI",
-            media: [
-                { src: "/People+ai/IMG-20250308-WA0014.jpg", caption: "GopiEattan and Team" },
-                { src: "/People+ai/IMG-20250308-WA0020.jpg", caption: "😅" },
-            ]
-        }
-    },
+
     {
         id: "4",
         title: "React Intern",
         company: "Gamersback",
-        date: "Nov 2023 - May 2024",
+        date: "Nov 2023 - Mar 2024",
         category: "career",
         preview: "/gamersback.jpeg",
         description: "Building gaming web experiences in React",
@@ -86,7 +87,7 @@ const workItems: WorkItem[] = [
             title: "React Intern",
             company: "Gamersback",
             media: [
-                { src: "/gamersback/Internship_cert.png", caption: "Internship Certificate" }
+                { src: "/gamersback/Internship_cert.png" }
             ],
             description: "At Gamerback, I took full ownership of the frontend, building both the customer-facing product and the internal admin panel from the ground up within a monolithic setup. The application was developed using React.js with Vite, focusing on performance, scalability, and responsive design through Tailwind CSS and Material UI. I structured client-side navigation using React Router and implemented centralized state handling with Redux to maintain consistent data flow. Secure authentication and role-based access control were implemented using JWT for both user and admin journeys. Design handoffs from Figma were converted into reusable, accessible components while maintaining clean architecture and production-ready code. The work involved extensive use of HTML, CSS, JavaScript, and TypeScript, with a strong emphasis on smooth API integration and long-term maintainability.",
             techStack: "React.js, Vite, Tailwind CSS, Material UI, Context API, Redux, React Router, JWT, HTML/CSS, JavaScript, TypeScript, Responsive Design, Postman, Figma"

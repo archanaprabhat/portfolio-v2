@@ -14,6 +14,8 @@ interface ProjectModalProps {
   onClose: () => void;
   title: string;
   demoVideo?: string;
+  demoImage?: string;
+  description?: string;
   techStack?: TechStackItem[];
   projectUrl: string;
 }
@@ -23,6 +25,8 @@ export default function ProjectModal({
   onClose,
   title,
   demoVideo,
+  demoImage,
+  description,
   techStack,
   projectUrl,
 }: ProjectModalProps) {
@@ -103,6 +107,24 @@ export default function ProjectModal({
                   >
                     Your browser does not support the video tag.
                   </video>
+                </div>
+              )}
+
+              {demoImage && (
+                <div className="mb-8 overflow-hidden rounded-xl bg-gray-100 border border-gray-300">
+                  <img
+                    src={demoImage}
+                    alt={title}
+                    className="w-full h-auto object-contain rounded-xl"
+                  />
+                </div>
+              )}
+
+              {description && (
+                <div className="mb-8">
+                  <p className="text-gray-1200 leading-relaxed whitespace-pre-wrap">
+                    {description}
+                  </p>
                 </div>
               )}
 

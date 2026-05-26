@@ -13,6 +13,7 @@ interface ProjectCardProps {
   githubUrl?: string;
   description?: string;
   demoVideo?: string;
+  demoImage?: string;
   techStack?: TechStackItem[];
 }
 
@@ -24,11 +25,12 @@ export default function ProjectCard({
   githubUrl,
   description,
   demoVideo,
+  demoImage,
   techStack,
 }: ProjectCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const hasModalContent = !!demoVideo || (techStack && techStack.length > 0);
+  const hasModalContent = !!demoVideo || !!demoImage || (techStack && techStack.length > 0);
 
   const handleCardClick = () => {
     if (hasModalContent) {
@@ -64,9 +66,6 @@ export default function ProjectCard({
         </div>
         <div className="flex w-full flex-col p-4 font-medium">
           <span>{title}</span>
-          {description && (
-            <span className="font-normal text-gray-1100">{description}</span>
-          )}
           {githubUrl && (
             <a
               href={githubUrl}
@@ -86,6 +85,8 @@ export default function ProjectCard({
         onClose={() => setIsModalOpen(false)}
         title={title}
         demoVideo={demoVideo}
+        demoImage={demoImage}
+        description={description}
         techStack={techStack}
         projectUrl={projectUrl}
       />
