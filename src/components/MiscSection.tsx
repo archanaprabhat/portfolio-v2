@@ -42,22 +42,41 @@ export default function MiscSection() {
           }
         }
         .gradient-border-btn {
-          background: linear-gradient(var(--btn-bg, #e5e7eb), var(--btn-bg, #e5e7eb)) padding-box,
+          position: relative;
+          background: linear-gradient(var(--btn-bg, #ffffff), var(--btn-bg, #ffffff)) padding-box,
                       linear-gradient(90deg, #4285f4, #a855f7, #ea4335, #fbbc05, #34a853, #4285f4) border-box;
           border: 1.5px solid transparent;
           background-size: 200% 100%;
           animation: move-gradient 6s linear infinite;
-          --btn-bg: #e5e7eb;
+          --btn-bg: #ffffff;
+          z-index: 1;
+        }
+        .gradient-border-btn::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          background: linear-gradient(90deg, #4285f4, #a855f7, #ea4335, #fbbc05, #34a853, #4285f4);
+          background-size: 200% 100%;
+          animation: move-gradient 6s linear infinite;
+          filter: blur(12px);
+          opacity: 0.5;
+          z-index: -1;
+          transition: opacity 0.3s ease;
+        }
+        .gradient-border-btn:hover::before {
+          opacity: 0.8;
+          animation-duration: 3s;
         }
         .gradient-border-btn:hover {
-          --btn-bg: #d1d5db;
+          --btn-bg: #ffffff;
           animation-duration: 3s;
         }
         .dark .gradient-border-btn {
-          --btn-bg: #1f2937;
+          --btn-bg: #000000;
         }
         .dark .gradient-border-btn:hover {
-          --btn-bg: #374151;
+          --btn-bg: #000000;
         }
       `}</style>
       <button

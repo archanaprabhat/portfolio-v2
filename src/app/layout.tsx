@@ -6,34 +6,34 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const siteURL = "https://archana-prabhat.vercel.app/";
+const siteURL = "https://www.archanaprabhath.com/";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteURL),
 
-  title: "Archana Prabhat",
+  title: "Archana Prabhath",
   description:
     "Full-Stack Engineer creating web experiences",
   keywords: [
-    "Archana Prabhat",
+    "Archana Prabhath",
     "Full Stack Developer",
     "React Developer",
     "Next.js Developer",
     "Frontend Engineer",
     "Web Developer",
   ],
-  authors: [{ name: "Archana Prabhat" }],
+  authors: [{ name: "Archana Prabhath" }],
 
   alternates: {
     canonical: siteURL,
   },
 
   openGraph: {
-    title: "Archana Prabhat",
+    title: "Archana Prabhath",
     description:
       "Full-Stack Engineer creating web experiences",
     url: siteURL,
-    siteName: "Archana Prabhat",
+    siteName: "Archana Prabhath",
     type: "website",
     locale: "en_US",
     images: [
@@ -41,14 +41,14 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Archana Prabhat Portfolio Preview",
+        alt: "Archana Prabhath Portfolio Preview",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Archana Prabhat",
+    title: "Archana Prabhath",
     description:
       "Full Stack Developer specializing in React, Next.js, and modern web technologies.",
     images: ["/og-image.png"],

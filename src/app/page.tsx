@@ -45,7 +45,7 @@ export default function Home() {
           </button>
           <div className="flex flex-col items-start justify-center">
             <span className="font-medium text-gray-1200 leading-snug">
-              Archana Prabhat
+              Archana Prabhath
             </span>
             <span className="whitespace-nowrap font-medium text-gray-1100 leading-snug">
               Frontend Developer
