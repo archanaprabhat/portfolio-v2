@@ -32,9 +32,37 @@ export default function MiscSection() {
 
   return (
     <div className="mt-16 w-full sm:mt-24 flex justify-center">
+      <style>{`
+        @keyframes move-gradient {
+          0% {
+            background-position: 0% 0%;
+          }
+          100% {
+            background-position: -200% 0%;
+          }
+        }
+        .gradient-border-btn {
+          background: linear-gradient(var(--btn-bg, #e5e7eb), var(--btn-bg, #e5e7eb)) padding-box,
+                      linear-gradient(90deg, #4285f4, #a855f7, #ea4335, #fbbc05, #34a853, #4285f4) border-box;
+          border: 1.5px solid transparent;
+          background-size: 200% 100%;
+          animation: move-gradient 6s linear infinite;
+          --btn-bg: #e5e7eb;
+        }
+        .gradient-border-btn:hover {
+          --btn-bg: #d1d5db;
+          animation-duration: 3s;
+        }
+        .dark .gradient-border-btn {
+          --btn-bg: #1f2937;
+        }
+        .dark .gradient-border-btn:hover {
+          --btn-bg: #374151;
+        }
+      `}</style>
       <button
         onClick={() => setIsOpen(true)}
-        className="group flex items-center gap-2 rounded-full border border-gray-300 bg-gray-200 px-5 py-2.5 text-sm font-medium text-gray-1200 transition-all hover:border-gray-400 hover:bg-gray-300 active:scale-95 dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700"
+        className="group flex items-center gap-2 rounded-full text-sm font-medium text-gray-1200 transition-all active:scale-95 gradient-border-btn px-5 py-2.5"
       >
         <Camera size={16} className="text-gray-1100 transition-colors group-hover:text-gray-1200" />
         <span>Miscellaneous Gallery</span>
