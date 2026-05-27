@@ -5,6 +5,8 @@ import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import ProjectModal, { TechStackItem } from "./ProjectModal";
 
+import { useRouter } from "next/navigation";
+
 interface ProjectCardProps {
   title: string;
   emoji?: string;
@@ -15,6 +17,7 @@ interface ProjectCardProps {
   demoVideo?: string;
   demoImage?: string;
   techStack?: TechStackItem[];
+  customPageUrl?: string;
 }
 
 export default function ProjectCard({
@@ -27,13 +30,17 @@ export default function ProjectCard({
   demoVideo,
   demoImage,
   techStack,
+  customPageUrl,
 }: ProjectCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
 
   const hasModalContent = !!demoVideo || !!demoImage || (techStack && techStack.length > 0);
 
   const handleCardClick = () => {
-    if (hasModalContent) {
+    if (customPageUrl) {
+      router.push(customPageUrl);
+    } else if (hasModalContent) {
       setIsModalOpen(true);
     } else {
       window.open(projectUrl, '_blank', 'noopener,noreferrer');

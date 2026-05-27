@@ -32,7 +32,7 @@ export default function MiscSection() {
 
   return (
     <div className="mt-16 w-full sm:mt-24 flex justify-center">
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes move-gradient {
           0% {
             background-position: 0% 0%;
@@ -78,7 +78,7 @@ export default function MiscSection() {
         .dark .gradient-border-btn:hover {
           --btn-bg: #000000;
         }
-      `}</style>
+      ` }} />
       <button
         onClick={() => setIsOpen(true)}
         className="group flex items-center gap-2 rounded-full text-sm font-medium text-gray-1200 transition-all active:scale-95 gradient-border-btn px-5 py-2.5"

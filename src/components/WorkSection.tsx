@@ -45,7 +45,7 @@ const workItems: WorkItem[] = [
             title: "Frontend Volunteer",
             company: "People+AI",
             media: [
-                { src: "/People+ai/IMG-20250308-WA0014.jpg", caption: "GopiEattan and Team" },
+                { src: "/People+ai/IMG-20250308-WA0014.jpg", caption: "The SUNVA Team" },
                 { src: "/People+ai/IMG-20250308-WA0020.jpg", caption: "😅" },
             ]
         }

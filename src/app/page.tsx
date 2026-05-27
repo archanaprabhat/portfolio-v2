@@ -121,14 +121,7 @@ export default function Home() {
             title="Bypassing paywall: Chrome Extension"
             imageSrc={securityThumbnail}
             projectUrl="https://www.youtube.com/watch?v=3Xnf5V6NmL8"
-            demoImage="/manorama.webp"
-            description="Identified a security vulnerability in Manorama Media's online magazine platform that allowed premium content downloads by bypassing access controls. Built a private Chrome extension as a proof of concept using content scripting, DOM interaction, and request manipulation to demonstrate the exploit, and responsibly reported the issue to the organization."
-            techStack={[
-              {
-                category: "Tech",
-                items: "Chrome Extension (Manifest v3, content scripts, background workers, Chrome APIs, DOM interaction, CSP/CORS, Chrome DevTools, JavaScript/TypeScript)",
-              },
-            ]}
+            customPageUrl="/projects/bypassing-paywall"
           />
           <ProjectCard
             title="Dataverse"
