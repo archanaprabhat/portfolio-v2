@@ -1,39 +1,48 @@
+"use client";
+
 import Image from "next/image";
 import { Mail, Youtube, Github, Pen, ArrowDownToLine, Codepen } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Contact from "@/components/Contact";
 import WorkSection from "@/components/WorkSection";
 import MiscSection from "@/components/MiscSection";
 import ProjectCard from "@/components/ProjectCard";
 import SocialLink from "@/components/SocialLink";
 import ThemeToggle from "@/components/ThemeToggle";
-import voiceNotesThumbnail from "@/assets/voicenotes_thumbnail.png";
-import watchlisterThumbnail from "@/assets/movieValut-thumb.png"
-import dataverseThumbnail from "@/assets/Dataverse.png"
-import sunvaThumbnail from "@/assets/SUNVA.png"
-import harryPotterThumbnail from "@/assets/harry potter-thumb.png"
-import chessThumbnail from "@/assets/chess.png"
-import habitThumbnail from "@/assets/habit-tracker.webp"
-import chatThumbnail from "@/assets/chat.png"
-import artificiumThumbnail from "@/assets/Artificium.jpg"
-import mapThumbnail from "@/assets/map.png"
-import securityThumbnail from "@/assets/securityVul.png"
+import voiceNotesThumbnail from "@/assets/voicenotes_thumbnail.webp";
+import watchlisterThumbnail from "@/assets/movieValut-thumb.webp";
+import dataverseThumbnail from "@/assets/Dataverse.webp";
+import sunvaThumbnail from "@/assets/SUNVA.webp";
+import harryPotterThumbnail from "@/assets/harry potter-thumb.webp";
+import chessThumbnail from "@/assets/chess.webp";
+import habitThumbnail from "@/assets/habit-tracker.webp";
+import chatThumbnail from "@/assets/chat.webp";
+import mapThumbnail from "@/assets/map.webp";
+import securityThumbnail from "@/assets/securityVul.webp";
 
 
 export default function Home() {
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+
   return (
     <main className="mx-auto max-w-[692px] px-6 py-12 leading-relaxed sm:py-16">
       {/* Header Section */}
       <div className="mt-8 mb-6 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <a href="/profile.png" target="_blank" rel="noreferrer" className="shrink-0">
+          <button
+            onClick={() => setIsProfileOpen(true)}
+            className="group relative size-11 overflow-hidden rounded-full outline outline-black/5 dark:outline-white/5 shrink-0 transition-transform hover:scale-105 focus:outline-none"
+            aria-label="View profile picture"
+          >
             <Image
               alt="Archana"
-              className="size-11 select-none rounded-full object-cover outline outline-black/5 dark:outline-white/5 transition-transform hover:scale-105"
-              height={100}
-              width={100}
-              src="/profile.png"
+              className="select-none object-cover scale-[3] translate-x-[-10%] translate-y-[50%]"
+              fill
+              src="/profile.webp"
+              priority
             />
-          </a>
+          </button>
           <div className="flex flex-col items-start justify-center">
             <span className="font-medium text-gray-1200 leading-snug">
               Archana Prabhat
@@ -90,6 +99,7 @@ export default function Home() {
           <ProjectCard
             title="Voice Notes Clone"
             imageSrc={voiceNotesThumbnail}
+            githubUrl="https://github.com/archanaprabhat/VoiceNotes"
             projectUrl="https://archanaprabhat.github.io/VoiceNotes/"
             demoVideo="/voicenotes_demo.mp4"
             techStack={[
@@ -111,7 +121,7 @@ export default function Home() {
             title="Bypassing paywall: Chrome Extension"
             imageSrc={securityThumbnail}
             projectUrl="https://www.youtube.com/watch?v=3Xnf5V6NmL8"
-            demoImage="/manorama.png"
+            demoImage="/manorama.webp"
             description="Identified a security vulnerability in Manorama Media's online magazine platform that allowed premium content downloads by bypassing access controls. Built a private Chrome extension as a proof of concept using content scripting, DOM interaction, and request manipulation to demonstrate the exploit, and responsibly reported the issue to the organization."
             techStack={[
               {
@@ -127,7 +137,7 @@ export default function Home() {
             githubUrl="https://github.com/archanaprabhat/dataverse-cloud-erp"
           />
           <ProjectCard
-            title="Sunva | People+AI"
+            title="Sunva:Seamless conversation loop for the deaf "
             imageSrc={sunvaThumbnail}
             projectUrl="https://www.youtube.com/watch?v=pF41AyUhE7w"
           />
@@ -165,6 +175,12 @@ export default function Home() {
             githubUrl="https://github.com/archanaprabhat/Consistency"
           />
           <ProjectCard
+            title="Real Time Tracker"
+            imageSrc={mapThumbnail}
+            projectUrl="https://www.youtube.com/watch?v=rFD_K5pVOc0"
+            githubUrl="https://github.com/archanaprabhat/RealTime-Tracker"
+          />
+          <ProjectCard
             title="Harry Potter Sorting Hat"
             imageSrc={harryPotterThumbnail}
             projectUrl="https://sorting-hat-magic.vercel.app/"
@@ -175,18 +191,6 @@ export default function Home() {
             imageSrc={chatThumbnail}
             projectUrl="https://www.youtube.com/shorts/--Hswuwx7jw"
             githubUrl="https://github.com/archanaprabhat/ChatApp"
-          />
-          <ProjectCard
-            title="Real Time Tracker"
-            imageSrc={mapThumbnail}
-            projectUrl="https://www.youtube.com/watch?v=rFD_K5pVOc0"
-            githubUrl="https://github.com/archanaprabhat/RealTime-Tracker"
-          />
-          <ProjectCard
-            title="Artificium"
-            imageSrc={artificiumThumbnail}
-            projectUrl="https://artificium-chi.vercel.app/"
-            githubUrl="https://github.com/archanaprabhat/Artificium"
           />
         </div>
       </div>
@@ -212,6 +216,47 @@ export default function Home() {
           Icon={Mail}
         />
       </section>
+
+      {/* Profile Image Modal */}
+      <AnimatePresence>
+        {isProfileOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsProfileOpen(false)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            />
+
+            {/* Modal Container */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="relative z-10 flex max-h-[85vh] max-w-[90vw] flex-col items-center justify-center overflow-hidden rounded-2xl bg-black/40 border border-white/10 shadow-2xl p-2"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close button inside modal container */}
+              <button
+                onClick={() => setIsProfileOpen(false)}
+                className="absolute right-4 top-4 z-20 rounded-full bg-black/60 p-2 text-white/80 transition-colors hover:bg-black/90 hover:text-white"
+                aria-label="Close profile picture modal"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+
+              {/* Full Profile Image */}
+              <img
+                src="/profile.webp"
+                alt="Archana Prabhat - Full View"
+                className="max-h-[80vh] max-w-full rounded-lg object-contain shadow-inner"
+              />
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }

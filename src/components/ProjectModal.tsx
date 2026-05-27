@@ -98,13 +98,15 @@ export default function ProjectModal({
                 <div className="mb-8 overflow-hidden rounded-xl bg-black">
                   <video
                     ref={videoRef}
-                    src={demoVideo}
                     controls
                     className="w-full"
                     autoPlay
                     playsInline
                     muted
+                    preload="metadata"
                   >
+                    <source src={demoVideo.replace(/\.mp4$/, '.webm')} type="video/webm" />
+                    <source src={demoVideo} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>

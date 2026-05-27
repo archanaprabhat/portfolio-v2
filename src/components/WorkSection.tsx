@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { FileText, Boxes } from "lucide-react";
 import WorkModal, { WorkModalData } from "./WorkModal";
 
 type WorkItem = {
@@ -117,7 +116,7 @@ const workItems: WorkItem[] = [
         category: "writing",
         href: "https://medium.com/@archanaprabhat/that-tab-you-closed-its-still-watching-you-meet-the-service-worker-38307807a8db",
         target: "_blank",
-        preview: "⚙︎",
+        preview: "/writing/service-worker.avif",
         description: "How apps stay alive after you close the tab",
     },
     {
@@ -126,7 +125,7 @@ const workItems: WorkItem[] = [
         category: "writing",
         href: "https://medium.com/@archanaprabhat/push-notification-implementation-using-fcm-7b5bf2d0fb9a",
         target: "_blank",
-        preview: "⎙",
+        preview: "/writing/push-notification.avif",
         description: "Breaking down real-world notification flows",
     },
     {
@@ -135,7 +134,7 @@ const workItems: WorkItem[] = [
         category: "writing",
         href: "https://medium.com/@archanaprabhat/options-objects-explained-like-youre-5-884043fd88b3",
         target: "_blank",
-        preview: "{}",
+        preview: "/writing/connect_474x300.avif",
         description: "Making JavaScript options less confusing",
     },
     {
@@ -144,7 +143,7 @@ const workItems: WorkItem[] = [
         category: "writing",
         href: "https://medium.com/@archanaprabhat/setcount-count-1-works-until-it-doesnt-here-s-why-react-devs-swear-by-prev-prev-1-c240780e875b",
         target: "_blank",
-        preview: "⟳",
+        preview: "/writing/moon_474x300.avif",
         description: "Why stale state breaks React updates",
     },
     {
@@ -153,101 +152,86 @@ const workItems: WorkItem[] = [
         category: "writing",
         href: "https://medium.com/@archanaprabhat/building-arc-a-track-a-simple-habit-tracker-for-beginners-using-react-tailwind-vite-9a32e2b18b14",
         target: "_blank",
-        preview: "</>",
+        preview: "/writing/code.avif",
         description: "Code walkthrough",
     },
 ];
 
 export default function WorkSection() {
-    const [filter, setFilter] = useState<"career" | "writing">("career");
     const [selectedModalData, setSelectedModalData] = useState<WorkModalData | null>(null);
 
-    const filteredItems = workItems.filter((item) => item.category === filter);
+    const careerItems = workItems.filter((item) => item.category === "career");
+    const writingItems = workItems.filter((item) => item.category === "writing");
+
+    const renderItem = (item: WorkItem) => {
+        const isModal = !!item.modalData;
+
+        return (
+            <a
+                key={item.id}
+                aria-label={item.title}
+                className="group -mx-3 flex h-auto items-center justify-center gap-4 rounded-xl py-3 pr-4 pl-3 hover:bg-gray-200 cursor-pointer"
+                href={isModal ? undefined : item.href}
+                target={isModal ? undefined : (item.target ?? "_blank")}
+                rel={isModal ? undefined : "noopener noreferrer"}
+                onClick={(e) => {
+                    if (isModal) {
+                        e.preventDefault();
+                        setSelectedModalData(item.modalData!);
+                    }
+                }}
+            >
+                <div className="relative aspect-[158/100] h-20 shrink-0 overflow-hidden rounded-lg bg-gray-100 shadow-custom border border-gray-300 flex items-center justify-center">
+                    {item.preview.startsWith('/') ? (
+                        item.category === "writing" ? (
+                            <Image
+                                src={item.preview}
+                                alt={item.title}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 120px, 160px"
+                            />
+                        ) : (
+                            <Image
+                                src={item.preview}
+                                alt={item.title}
+                                width={40}
+                                height={40}
+                                className="object-contain"
+                            />
+                        )
+                    ) : (
+                        <span className="text-3xl font-medium text-gray-1000">{item.preview}</span>
+                    )}
+                </div>
+                <div className="flex w-full min-w-0 flex-col items-start justify-center gap-0.5">
+                    <span className="w-full truncate font-medium text-gray-1200">
+                        {item.title}
+                    </span>
+                    {item.company && (
+                        <span className="font-normal text-gray-1100 text-sm">
+                            {item.company}
+                        </span>
+                    )}
+                    {item.description && (
+                        <span className="w-full truncate text-sm text-gray-1100 mt-0.5">{item.description}</span>
+                    )}
+                    {item.date && <span className="shrink-0 whitespace-nowrap text-sm text-gray-1000">{item.date}</span>}
+                </div>
+            </a>
+        );
+    };
 
     return (
         <div className="mt-16 w-full sm:mt-32">
-            <div className="mb-5 flex w-full items-center font-medium text-gray-1200">Work</div>
-            <div className="mb-5 flex gap-2">
-                <button
-                    aria-label="Career"
-                    className={`filter-pill ${filter === "career"
-                        ? "bg-gray-1200 text-gray-100"
-                        : "bg-gray-300 text-gray-1200 hover:bg-gray-400"
-                        }`}
-                    type="button"
-                    onClick={() => setFilter("career")}
-                >
-                    Career
-                </button>
-                <button
-                    aria-label="Writing"
-                    className={`filter-pill ${filter === "writing"
-                        ? "bg-gray-1200 text-gray-100"
-                        : "bg-gray-300 text-gray-1200 hover:bg-gray-400"
-                        }`}
-                    type="button"
-                    onClick={() => setFilter("writing")}
-                >
-                    <FileText className="size-[18px]" />
-                    Writing
-                </button>
-            </div>
+            <div className="mb-5 flex w-full items-center font-medium text-gray-1200">Career</div>
             <div className="flex flex-col gap-2">
-                {filteredItems.map((item) => {
-                    const isModal = !!item.modalData;
+                {careerItems.map(renderItem)}
+            </div>
 
-                    return (
-                        <a
-                            key={item.id}
-                            aria-label={item.title}
-                            className="group -mx-3 flex h-auto items-center justify-center gap-4 rounded-xl py-3 pr-4 pl-3 hover:bg-gray-200 cursor-pointer"
-                            href={isModal ? undefined : item.href}
-                            target={isModal ? undefined : (item.target ?? "_blank")}
-                            rel={isModal ? undefined : "noopener noreferrer"}
-                            onClick={(e) => {
-                                if (isModal) {
-                                    e.preventDefault();
-                                    setSelectedModalData(item.modalData!);
-                                }
-                            }}
-                        >
-                            <div className="relative aspect-[158/100] h-20 shrink-0 overflow-hidden rounded-lg bg-gray-100 shadow-custom border border-gray-300 flex items-center justify-center">
-                                {item.preview.startsWith('/') ? (
-                                    <Image
-                                        src={item.preview}
-                                        alt={item.title}
-                                        width={40}
-                                        height={40}
-                                        className="object-contain"
-                                    />
-                                ) : (
-                                    <span className="text-3xl font-medium text-gray-1000">{item.preview}</span>
-                                )}
-                            </div>
-                            <div className="flex w-full min-w-0 flex-col items-start justify-center gap-0.5">
-                                <span className="w-full truncate font-medium text-gray-1200">
-                                    {item.title}
-                                </span>
-                                {item.company && (
-                                    <span className="font-normal text-gray-1100 text-sm">
-                                        {item.company}
-                                    </span>
-                                )}
-                                {item.description && (
-                                    <span className="w-full truncate text-sm text-gray-1100 mt-0.5">{item.description}</span>
-                                )}
-                                {item.date && <span className="shrink-0 whitespace-nowrap text-sm text-gray-1000">{item.date}</span>}
-                            </div>
-                            <div className="hidden size-8 shrink-0 items-center justify-center rounded-full bg-gray-300 sm:flex">
-                                {item.category === "writing" ? (
-                                    <FileText className="size-4 fill-gray-1000" />
-                                ) : (
-                                    <Boxes className="size-4 fill-gray-1000" />
-                                )}
-                            </div>
-                        </a>
-                    );
-                })}
+            <div className="mt-16 mb-5 flex w-full items-center font-medium text-gray-1200">Writing</div>
+            <div className="flex flex-col gap-2">
+                {writingItems.map(renderItem)}
             </div>
 
             <WorkModal

@@ -55,7 +55,11 @@ interface ContactFormProps {
 
 const ContactForm = ({ email, status, onEmailChange, onSubmit }: ContactFormProps) => {
   const isLoading = status === "loading";
-  const buttonText = status === "success" ? "✓ Sent" : isLoading ? "..." : "Send";
+
+  let buttonText = "Send";
+  if (status === "success") buttonText = "✓ Sent";
+  else if (status === "loading") buttonText = "...";
+  else if (status === "error") buttonText = "✕ Failed";
 
   return (
     <div className="flex w-full shrink-0 flex-col items-start justify-center p-5">
@@ -63,7 +67,7 @@ const ContactForm = ({ email, status, onEmailChange, onSubmit }: ContactFormProp
       <p className="mt-0.5 text-gray-1100">
         Drop your email and I'll reach out to you
       </p>
-      <form className="mt-3 flex w-full flex-col gap-3 sm:flex-row" onSubmit={onSubmit}>
+      <form className="mt-3 flex w-full flex-col gap-3 sm:flex-row w-full" onSubmit={onSubmit}>
         <label className="sr-only" htmlFor="email">
           Email address
         </label>
@@ -87,6 +91,16 @@ const ContactForm = ({ email, status, onEmailChange, onSubmit }: ContactFormProp
           {buttonText}
         </button>
       </form>
+      {status === "success" && (
+        <p className="mt-2 text-green-600 text-sm font-medium">
+          Thanks! I've received your email and will get back to you shortly.
+        </p>
+      )}
+      {status === "error" && (
+        <p className="mt-2 text-red-500 text-sm font-medium">
+          Failed to send. Please try again.
+        </p>
+      )}
     </div>
   );
 };
@@ -98,14 +112,42 @@ export default function Contact() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (!email) return;
+
     setStatus("loading");
 
-    // Simulate API call - replace with actual email service integration
-    setTimeout(() => {
+    try {
+      const apiKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+      const headers: Record<string, string> = {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`,
+        "apikey": apiKey,
+      };
+
+      const response = await fetch(
+        "https://scjwsyofjfpfxkfoutpz.supabase.co/functions/v1/rapid-responder",
+        {
+          method: "POST",
+          headers,
+          body: JSON.stringify({ email }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Failed to submit form: ${response.statusText}`);
+      }
+
       setStatus("success");
       setEmail("");
-      setTimeout(() => setStatus("idle"), 3000);
-    }, 1000);
+
+      // Reset back to idle status after 4 seconds
+      setTimeout(() => setStatus("idle"), 4000);
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      setStatus("error");
+      // Reset back to idle status after 4 seconds to let them try again
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
 
   return (
