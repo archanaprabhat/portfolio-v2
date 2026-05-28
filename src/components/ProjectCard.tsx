@@ -18,6 +18,7 @@ interface ProjectCardProps {
   demoImage?: string;
   techStack?: TechStackItem[];
   customPageUrl?: string;
+  isExperiment?: boolean;
 }
 
 export default function ProjectCard({
@@ -31,6 +32,7 @@ export default function ProjectCard({
   demoImage,
   techStack,
   customPageUrl,
+  isExperiment,
 }: ProjectCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
@@ -53,7 +55,7 @@ export default function ProjectCard({
         role="button"
         tabIndex={0}
         aria-label={title}
-        className="project-card cursor-pointer"
+        className="project-card cursor-pointer flex flex-col"
         onClick={handleCardClick}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
@@ -71,19 +73,29 @@ export default function ProjectCard({
             </div>
           )}
         </div>
-        <div className="flex w-full flex-col p-4 font-medium">
-          <span>{title}</span>
-          {githubUrl && (
-            <a
-              href={githubUrl}
-              className="font-normal text-gray-1100 self-end"
-              target="_blank"
-              rel="noreferrer"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Github />
-            </a>
-          )}
+        <div className="flex w-full flex-col p-4 font-medium flex-1">
+          <span className="mb-3">{title}</span>
+          <div className="mt-auto flex w-full items-center justify-between">
+            {isExperiment ? (
+              <div className="flex items-center gap-1.5 rounded border border-gray-300 bg-gray-100/50 px-2 py-1 text-xs font-medium text-gray-1000 select-none">
+                <Image src="/experiment.svg" alt="Experiment" width={18} height={18} className="object-contain" />
+                <span>Experiment</span>
+              </div>
+            ) : (
+              <div />
+            )}
+            {githubUrl && (
+              <a
+                href={githubUrl}
+                className="font-normal text-gray-1100 hover:text-gray-1200 transition-colors ml-auto"
+                target="_blank"
+                rel="noreferrer"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Github size={20} />
+              </a>
+            )}
+          </div>
         </div>
       </div>
 

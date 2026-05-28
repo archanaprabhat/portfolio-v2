@@ -74,6 +74,8 @@ export default function BypassingPaywallPage() {
           <br /> <br />
           First, I quickly built a custom Chrome extension to handle the logic right in the browser. Then, to actually pull the data, I used a Python script that would download the premium content pages automatically.
           <br /> <br />
+          (Note: I’m intentionally keeping the technicalities of how this extension and script worked vague here, because as of right now, parts of the issue are still unfixed on their site).
+          <br /> <br />
           Once I had everything running smoothly, I recorded a quick video showing the whole process in action, the extension working, the script downloading the pages, and the premium content loading up perfectly.
           <br /> <br />
           <div className="flex justify-start">
@@ -94,12 +96,12 @@ export default function BypassingPaywallPage() {
           <br /> <br />
           OSINT (Open Source Intelligence) was pretty new to me, but I used it to dig around and map out the organization. It helped me find the email addresses of the actual people at the top who could handle this, including the tech leads and the CEO.
           <br /> <br />
-          I sent a detailed mail explaining what I found, attached the demonstration video showing the Chrome extension and Python script at work, and sent it to everyone on that list.
+          I reached out through every channel I could find, sent detailed emails explaining what I found, attached the demonstration video, and even messaged them directly.
           <br /> <br />
-          They caught on quickly, realized how serious it was, and the dev team patched the issue.
+          <h2 className="text-xl font-medium text-gray-1200 mb-4">The Silent Fix</h2>
+          They never actually responded to me. Not a single reply, email, or message. But even though they completely ghosted me, they clearly saw the proof. Shortly after I reached out, their dev team quietly went in and patched parts of the issue. Even though things aren't 100% fully resolved across the entire site yet, they locked down the main loophole I exposed.
           <br /> <br />
-          So yeah, that’s how a random afternoon of messing around ended up helping a lot. Honestly, it just felt good to finally use my coding skills for something tangible that people around me could actually understand. I went from being the person who "works in tech but gets blamed when the internet goes down" to actually making a difference out there. At least now I have a solid answer the next time my family asks what exactly it is that I do all day on my laptop.
-
+          So yeah, that’s how a random afternoon of messing around ended up helping a lot.
         </p>
       </div>
 

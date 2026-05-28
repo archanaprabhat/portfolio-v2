@@ -20,6 +20,8 @@ import habitThumbnail from "@/assets/habit-tracker.webp";
 import chatThumbnail from "@/assets/chat.webp";
 import mapThumbnail from "@/assets/map.webp";
 import securityThumbnail from "@/assets/securityVul.webp";
+import BentoBoxThumbnail from "@/assets/bento_box.webp";
+import insightCardIphoneThumbnail from "@/assets/insightCard.avif";
 
 
 export default function Home() {
@@ -63,7 +65,7 @@ export default function Home() {
       {/* Social Links */}
       <div className="mt-6 flex w-full flex-wrap justify-start gap-3">
         <SocialLink
-          href="Archana_Resume.pdf"
+          href="/Archana_Resume.pdf"
           label="Resume"
           Icon={ArrowDownToLine}
         />
@@ -124,21 +126,42 @@ export default function Home() {
             customPageUrl="/projects/bypassing-paywall"
           />
           <ProjectCard
-            title="Dataverse"
-            imageSrc={dataverseThumbnail}
-            projectUrl="https://dataverse-nu.vercel.app/"
-            githubUrl="https://github.com/archanaprabhat/dataverse-cloud-erp"
-          />
-          <ProjectCard
             title="Sunva:Seamless conversation loop for the deaf "
             imageSrc={sunvaThumbnail}
-            projectUrl="https://www.youtube.com/watch?v=pF41AyUhE7w"
+            projectUrl="https://www.youtube.com/watch?v=vDGHeRZ_xHI&list=PLyERFVb5NMdy4Qppp2O0uhE-OLIKDfpLz&index=1"
+          />
+          <ProjectCard
+            title="BentoBox"
+            imageSrc={BentoBoxThumbnail}
+            projectUrl="https://archanaprabhat.github.io/Bento-Box/"
+            githubUrl="https://github.com/archanaprabhat/Bento-Box"
+          />
+          <ProjectCard
+            title="Stagger Animation"
+            imageSrc={insightCardIphoneThumbnail}
+            projectUrl="https://archanaprabhat.github.io/insight-card-iphone/"
+            githubUrl="https://github.com/archanaprabhat/insight-card-iphone"
           />
           <ProjectCard
             title="Peer-to-Peer Chess"
             imageSrc={chessThumbnail}
             projectUrl="https://www.youtube.com/watch?v=jX7EPPMupLs"
             githubUrl="https://github.com/archanaprabhat/chess"
+            isExperiment={true}
+          />
+          <ProjectCard
+            title="Real Time Tracker"
+            imageSrc={mapThumbnail}
+            projectUrl="https://www.youtube.com/watch?v=rFD_K5pVOc0"
+            githubUrl="https://github.com/archanaprabhat/RealTime-Tracker"
+            isExperiment={true}
+          />
+          <ProjectCard
+            title="Socket.IO Chat App"
+            imageSrc={chatThumbnail}
+            projectUrl="https://www.youtube.com/shorts/--Hswuwx7jw"
+            githubUrl="https://github.com/archanaprabhat/ChatApp"
+            isExperiment={true}
           />
           <ProjectCard
             title="Watchlistr"
@@ -162,28 +185,39 @@ export default function Home() {
             ]}
           />
           <ProjectCard
+            title="Dataverse"
+            imageSrc={dataverseThumbnail}
+            projectUrl="https://dataverse-nu.vercel.app/"
+            githubUrl="https://github.com/archanaprabhat/dataverse-cloud-erp"
+          />
+
+          <ProjectCard
             title="Consistency Tracker"
             imageSrc={habitThumbnail}
             projectUrl="https://tracker-nextjs-iqvc.vercel.app/"
             githubUrl="https://github.com/archanaprabhat/Consistency"
+            demoVideo="/consistency.mp4"
+            techStack={[
+              {
+                category: "Frontend",
+                items: "Next.js 14 (App Router), TypeScript, React, Tailwind CSS 4(Multiple themes)",
+              },
+              {
+                category: "Backend, Database & Storage",
+                items: "Firebase, Firebase Admin, Localstorage",
+              },
+              {
+                category: "UI Components & Icons",
+                items: "Lucide React & React Icons, Sonner, Emoji Picker React",
+              },
+            ]}
           />
-          <ProjectCard
-            title="Real Time Tracker"
-            imageSrc={mapThumbnail}
-            projectUrl="https://www.youtube.com/watch?v=rFD_K5pVOc0"
-            githubUrl="https://github.com/archanaprabhat/RealTime-Tracker"
-          />
+
           <ProjectCard
             title="Harry Potter Sorting Hat"
             imageSrc={harryPotterThumbnail}
             projectUrl="https://sorting-hat-magic.vercel.app/"
             githubUrl="https://github.com/archanaprabhat/Harry_Potter_Sorting_Hat"
-          />
-          <ProjectCard
-            title="Socket.IO Chat App"
-            imageSrc={chatThumbnail}
-            projectUrl="https://www.youtube.com/shorts/--Hswuwx7jw"
-            githubUrl="https://github.com/archanaprabhat/ChatApp"
           />
         </div>
       </div>
