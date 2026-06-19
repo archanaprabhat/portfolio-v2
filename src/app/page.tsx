@@ -85,7 +85,7 @@ export default function Home() {
           Icon={Pen}
         />
         <SocialLink
-          href="https://www.youtube.com/@RedemptionArch/videos"
+          href="https://www.youtube.com/@Archana_Prabhath/videos"
           label="Youtube"
           Icon={Youtube}
         />
