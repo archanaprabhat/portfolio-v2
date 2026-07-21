@@ -128,12 +128,6 @@ export default function Home() {
             customPageUrl="/projects/bypassing-paywall"
           />
           <ProjectCard
-            title="Cencus India HLO Map Generator"
-            imageSrc={hlo}
-            projectUrl="https://map-my-block-ruby.vercel.app/"
-            githubUrl="https://github.com/archanaprabhat/map_my_block"
-          />
-          <ProjectCard
             title="Sunva:Seamless conversation loop for the deaf "
             imageSrc={sunvaThumbnail}
             projectUrl="https://www.youtube.com/watch?v=vDGHeRZ_xHI&list=PLyERFVb5NMdy4Qppp2O0uhE-OLIKDfpLz&index=1"
