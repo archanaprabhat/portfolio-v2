@@ -20,6 +20,7 @@ import habitThumbnail from "@/assets/habit-tracker.webp";
 import chatThumbnail from "@/assets/chat.webp";
 import mapThumbnail from "@/assets/map.webp";
 import securityThumbnail from "@/assets/securityVul.webp";
+import hlo from "@/assets/hlo.webp";
 import BentoBoxThumbnail from "@/assets/bento_box.webp";
 import insightCardIphoneThumbnail from "@/assets/insightCard.avif";
 
@@ -119,11 +120,18 @@ export default function Home() {
               },
             ]}
           />
+          
           <ProjectCard
             title="Bypassing paywall: Chrome Extension"
             imageSrc={securityThumbnail}
             projectUrl="https://www.youtube.com/watch?v=3Xnf5V6NmL8"
             customPageUrl="/projects/bypassing-paywall"
+          />
+          <ProjectCard
+            title="Cencus India HLO Map Generator"
+            imageSrc={hlo}
+            projectUrl="https://map-my-block-ruby.vercel.app/"
+            githubUrl="https://github.com/archanaprabhat/map_my_block"
           />
           <ProjectCard
             title="Sunva:Seamless conversation loop for the deaf "
