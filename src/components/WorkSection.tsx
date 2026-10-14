@@ -17,9 +17,21 @@ type WorkItem = {
     modalData?: WorkModalData;
 };
 
-const workItems: WorkItem[] = [
+const careerItems: WorkItem[] = [
     {
-        id: "1",
+        id: "lascade",
+        title: "Software Product Engineer",
+        company: "Lascade",
+        category: "career",
+        preview: "/lascade.jpeg",
+        description: "Product owner from scratch to end, roadmap to release",
+        modalData: {
+            title: "Software Product Engineer",
+            company: "Lascade",
+        },
+    },
+    {
+        id: "asteriscus",
         title: "SDE",
         company: "Asteriscus",
         date: "Jan 2024 - Present",
@@ -34,7 +46,7 @@ const workItems: WorkItem[] = [
         }
     },
     {
-        id: "3",
+        id: "people-ai",
         title: "Frontend Volunteer",
         company: "People+AI",
         date: "Jan 2025 - Mar 2025",
@@ -51,7 +63,7 @@ const workItems: WorkItem[] = [
         }
     },
     {
-        id: "2",
+        id: "vymo",
         title: "Software Development Engineer",
         company: "Vymo",
         date: "May 2024 - Jan 2025",
@@ -73,9 +85,8 @@ const workItems: WorkItem[] = [
             techStack: "JavaScript(ES6), TypeScript, React.js, Node.js, Express.js, Microservices, REST APIs, JWT, OAuth, MongoDB/Mongoose, Airflow, SFTP, WebSockets, Version control(Git), Jira, Agile Scrum teams"
         }
     },
-
     {
-        id: "4",
+        id: "gamersback",
         title: "React Intern",
         company: "Gamersback",
         date: "Nov 2023 - Mar 2024",
@@ -93,7 +104,7 @@ const workItems: WorkItem[] = [
         }
     },
     {
-        id: "4.5",
+        id: "glowtouch",
         title: "SDE Intern",
         company: "Glowtouch",
         date: "Mid 2023",
@@ -110,8 +121,11 @@ const workItems: WorkItem[] = [
             techStack: "JavaScript, HTML, CSS, Linux, Shared Hosting Environment, Apache, MySQL, DNS, cPanel, TCP/IP, FTP, SSL, firewall configs, basic security"
         }
     },
+];
+
+const writingItems: WorkItem[] = [
     {
-        id: "5",
+        id: "writing-service-worker",
         title: "Service Worker",
         category: "writing",
         href: "https://medium.com/@archanaprabhat/that-tab-you-closed-its-still-watching-you-meet-the-service-worker-38307807a8db",
@@ -120,7 +134,7 @@ const workItems: WorkItem[] = [
         description: "How apps stay alive after you close the tab",
     },
     {
-        id: "6",
+        id: "writing-push-notification",
         title: "Push Notification",
         category: "writing",
         href: "https://medium.com/@archanaprabhat/push-notification-implementation-using-fcm-7b5bf2d0fb9a",
@@ -129,7 +143,7 @@ const workItems: WorkItem[] = [
         description: "Breaking down real-world notification flows",
     },
     {
-        id: "7",
+        id: "writing-options-object",
         title: "Options Object",
         category: "writing",
         href: "https://medium.com/@archanaprabhat/options-objects-explained-like-youre-5-884043fd88b3",
@@ -138,7 +152,7 @@ const workItems: WorkItem[] = [
         description: "Making JavaScript options less confusing",
     },
     {
-        id: "8",
+        id: "writing-react-batch-update",
         title: "React Batch Update",
         category: "writing",
         href: "https://medium.com/@archanaprabhat/setcount-count-1-works-until-it-doesnt-here-s-why-react-devs-swear-by-prev-prev-1-c240780e875b",
@@ -147,7 +161,7 @@ const workItems: WorkItem[] = [
         description: "Why stale state breaks React updates",
     },
     {
-        id: "9",
+        id: "writing-habit-tracker",
         title: "Habit Tracker",
         category: "writing",
         href: "https://medium.com/@archanaprabhat/building-arc-a-track-a-simple-habit-tracker-for-beginners-using-react-tailwind-vite-9a32e2b18b14",
@@ -159,9 +173,6 @@ const workItems: WorkItem[] = [
 
 export default function WorkSection() {
     const [selectedModalData, setSelectedModalData] = useState<WorkModalData | null>(null);
-
-    const careerItems = workItems.filter((item) => item.category === "career");
-    const writingItems = workItems.filter((item) => item.category === "writing");
 
     const renderItem = (item: WorkItem) => {
         const isModal = !!item.modalData;

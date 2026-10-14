@@ -1,9 +1,9 @@
-import { LucideIcon } from "lucide-react";
+import type { ComponentType } from "react";
 
 interface SocialLinkProps {
   href: string;
   label: string;
-  Icon: LucideIcon;
+  Icon: ComponentType<{ className?: string }>;
 }
 
 export default function SocialLink({ href, label, Icon }: SocialLinkProps) {

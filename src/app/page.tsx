@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Mail, Youtube, Github, Pen, ArrowDownToLine, Codepen } from "lucide-react";
+import { FaLinkedin } from "react-icons/fa";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Contact from "@/components/Contact";
@@ -59,17 +60,12 @@ export default function Home() {
       </div>
 
       {/* Bio */}
-      <p className="mb-6 text-gray-1100">
+      <p className="mb-6 text-gray-900 ">
         Building thoughtfully engineered, high-performance React and Next.js experiences, with a sharp eye for design and a focus on products that genuinely make life easier, fueled by curiosity and kaizen.
       </p>
 
       {/* Social Links */}
       <div className="mt-6 flex w-full flex-wrap justify-start gap-3">
-        <SocialLink
-          href="/Archana_Resume.pdf"
-          label="Resume"
-          Icon={ArrowDownToLine}
-        />
         <SocialLink
           href="https://github.com/archanaprabhat"
           label="GitHub"
@@ -90,11 +86,28 @@ export default function Home() {
           label="Youtube"
           Icon={Youtube}
         />
+        <SocialLink
+          href="https://www.linkedin.com/in/archanaprabhat"
+          label="LinkedIn"
+          Icon={FaLinkedin}
+        />
       </div>
 
+      <div className="flex h-16 w-full items-center justify-center sm:h-32">
+        <a
+          aria-label="Resume"
+          className="inline-flex items-center gap-1 font-medium text-gray-1200 underline decoration-gray-900 underline-offset-2 transition-colors hover:text-gray-500 hover:decoration-gray-800"
+          href="/Archana_Resume.pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <ArrowDownToLine className="size-[19px] shrink-0" />
+          Resume
+        </a>
+      </div>
 
       {/* Projects Section Wrapper */}
-      <div className="mt-16 w-full sm:mt-32">
+      <div className="w-full">
         <div className="mb-5 flex w-full items-center font-medium text-gray-1200">
           Projects
         </div>
