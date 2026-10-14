@@ -15,9 +15,12 @@ interface ProjectModalProps {
   title: string;
   demoVideo?: string;
   demoImage?: string;
+  awardImage?: string;
+  awardCaption?: string;
   description?: string;
   techStack?: TechStackItem[];
   projectUrl: string;
+  pdfUrl?: string;
 }
 
 export default function ProjectModal({
@@ -26,9 +29,12 @@ export default function ProjectModal({
   title,
   demoVideo,
   demoImage,
+  awardImage,
+  awardCaption,
   description,
   techStack,
   projectUrl,
+  pdfUrl,
 }: ProjectModalProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -122,6 +128,23 @@ export default function ProjectModal({
                 </div>
               )}
 
+              {awardImage && (
+                <div className="mb-8">
+                  {awardCaption && (
+                    <p className="mb-3 text-sm font-medium text-gray-1100">
+                      {awardCaption}
+                    </p>
+                  )}
+                  <div className="overflow-hidden rounded-xl border border-gray-300 bg-gray-100">
+                    <img
+                      src={awardImage}
+                      alt="Hackathon recognition"
+                      className="h-auto w-full object-contain"
+                    />
+                  </div>
+                </div>
+              )}
+
               {description && (
                 <div className="mb-8">
                   <p className="text-gray-1200 leading-relaxed whitespace-pre-wrap">
@@ -153,7 +176,18 @@ export default function ProjectModal({
             </div>
 
             {/* Footer */}
-            <div className="flex justify-end border-t border-gray-300 p-4 px-6">
+            <div className="flex flex-wrap justify-end gap-3 border-t border-gray-300 p-4 px-6">
+              {pdfUrl && (
+                <a
+                  href={pdfUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 rounded-full border border-gray-300 bg-gray-100 px-6 py-2.5 font-medium text-gray-1200 transition-[colors,transform] hover:border-gray-400 hover:bg-gray-200 active:scale-[0.98]"
+                >
+                  Submission PDF
+                  <ExternalLink size={16} />
+                </a>
+              )}
               <a
                 href={projectUrl}
                 target="_blank"

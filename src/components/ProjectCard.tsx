@@ -16,6 +16,9 @@ interface ProjectCardProps {
   description?: string;
   demoVideo?: string;
   demoImage?: string;
+  awardImage?: string;
+  awardCaption?: string;
+  pdfUrl?: string;
   techStack?: TechStackItem[];
   customPageUrl?: string;
   isExperiment?: boolean;
@@ -30,6 +33,9 @@ export default function ProjectCard({
   description,
   demoVideo,
   demoImage,
+  awardImage,
+  awardCaption,
+  pdfUrl,
   techStack,
   customPageUrl,
   isExperiment,
@@ -37,7 +43,13 @@ export default function ProjectCard({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
 
-  const hasModalContent = !!demoVideo || !!demoImage || (techStack && techStack.length > 0);
+  const hasModalContent =
+    !!demoVideo ||
+    !!demoImage ||
+    !!awardImage ||
+    !!pdfUrl ||
+    !!description ||
+    (techStack && techStack.length > 0);
 
   const handleCardClick = () => {
     if (customPageUrl) {
@@ -105,9 +117,12 @@ export default function ProjectCard({
         title={title}
         demoVideo={demoVideo}
         demoImage={demoImage}
+        awardImage={awardImage}
+        awardCaption={awardCaption}
         description={description}
         techStack={techStack}
         projectUrl={projectUrl}
+        pdfUrl={pdfUrl}
       />
     </>
   );

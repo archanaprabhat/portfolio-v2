@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Mail, Youtube, Github, Pen, ArrowDownToLine, Codepen } from "lucide-react";
+import { Mail, Youtube, Github, Pen, ArrowDownToLine, Codepen, ExternalLink } from "lucide-react";
 import { FaLinkedin } from "react-icons/fa";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -52,7 +52,7 @@ export default function Home() {
               Archana Prabhath
             </span>
             <span className="whitespace-nowrap font-medium text-gray-1100 leading-snug">
-              Frontend Developer
+            Software Engineer · Product
             </span>
           </div>
         </div>
@@ -60,10 +60,22 @@ export default function Home() {
       </div>
 
       {/* Bio */}
-      <p className="mb-6 text-gray-900 ">
-        Building thoughtfully engineered, high-performance React and Next.js experiences, with a sharp eye for design and a focus on products that genuinely make life easier, fueled by curiosity and kaizen.
+      <p className="mb-6 text-gray-900">
+        Building thoughtfully engineered products ~ owning the loop with a keen eye for design and thoughtful UX, and a focus on products that genuinely make life easier; fueled by curiosity and striving for{" "}
+        <a
+          href="https://www.highagency.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group/link inline-flex items-baseline gap-0.5 text-gray-900 transition-colors hover:text-gray-500"
+        >
+          high agency
+          <ExternalLink
+            className="size-3 shrink-0 translate-y-px opacity-40 transition-opacity group-hover/link:opacity-70"
+            aria-hidden
+          />
+        </a>
+        .
       </p>
-
       {/* Social Links */}
       <div className="mt-6 flex w-full flex-wrap justify-start gap-3">
         <SocialLink
@@ -145,6 +157,7 @@ export default function Home() {
             imageSrc={hlo}
             projectUrl="https://map-my-block-ruby.vercel.app/"
             githubUrl="https://github.com/archanaprabhat/map_my_block"
+            customPageUrl="/projects/map-my-block"
           />
           <ProjectCard
             title="Sunva:Seamless conversation loop for the deaf "
