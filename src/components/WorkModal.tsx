@@ -108,6 +108,7 @@ export default function WorkModal({ isOpen, onClose, data }: WorkModalProps) {
                       src={data.media[currentMediaIndex].src}
                       alt={data.media[currentMediaIndex].caption || "Work image"}
                       fill
+                      sizes="(max-width: 768px) 100vw, 768px"
                       className="object-contain"
                     />
 

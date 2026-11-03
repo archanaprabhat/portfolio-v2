@@ -303,9 +303,11 @@ export default function Home() {
               </button>
 
               {/* Full Profile Image */}
-              <img
+              <Image
                 src="/profile.webp"
                 alt="Archana Prabhat - Full View"
+                width={1200}
+                height={1600}
                 className="max-h-[80vh] max-w-full rounded-lg object-contain shadow-inner"
               />
             </motion.div>

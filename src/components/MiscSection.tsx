@@ -6,9 +6,9 @@ import Image from "next/image";
 import { Camera, X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const miscImages = [
-  { src: "/misc/1st time in google office.jpg", caption: "1st time in google office" },
+  { src: "/misc/1st-time-in-google-office.jpg", caption: "1st time in google office" },
   { src: "/misc/tink-her-hack(13).JPG", caption: "tink-her-hack" },
-  { src: "/misc/tinkerhub meetup.jpg", caption: "tinkerhub meetup" },
+  { src: "/misc/tinkerhub-meetup.jpg", caption: "tinkerhub meetup" },
 ];
 
 export default function MiscSection() {

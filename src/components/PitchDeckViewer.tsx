@@ -17,11 +17,16 @@ export default function PitchDeckViewer({ fileUrl }: PitchDeckViewerProps) {
   const [pageNumber, setPageNumber] = useState(1);
   const [containerWidth, setContainerWidth] = useState(640);
   const [loadError, setLoadError] = useState(false);
+  const [pageAspectRatio, setPageAspectRatio] = useState<number | null>(null);
 
   const onLoadSuccess = useCallback(({ numPages: total }: { numPages: number }) => {
     setNumPages(total);
     setPageNumber(1);
     setLoadError(false);
+  }, []);
+
+  const onPageLoadSuccess = useCallback((page: { width: number; height: number }) => {
+    setPageAspectRatio((prev) => prev ?? page.width / page.height);
   }, []);
 
   useEffect(() => {
@@ -66,13 +71,20 @@ export default function PitchDeckViewer({ fileUrl }: PitchDeckViewerProps) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex justify-center overflow-hidden rounded-xl border border-gray-300 bg-white shadow-sm">
+      <div
+        className="flex justify-center overflow-hidden rounded-xl border border-gray-300 bg-white shadow-sm"
+        style={
+          pageAspectRatio
+            ? { height: containerWidth / pageAspectRatio }
+            : { height: "min(70vh, 480px)" }
+        }
+      >
         <Document
           file={fileUrl}
           onLoadSuccess={onLoadSuccess}
           onLoadError={() => setLoadError(true)}
           loading={
-            <div className="flex h-[min(70vh,480px)] items-center justify-center text-sm text-gray-1000">
+            <div className="flex size-full items-center justify-center text-sm text-gray-1000">
               Loading pitch deck…
             </div>
           }
@@ -80,6 +92,7 @@ export default function PitchDeckViewer({ fileUrl }: PitchDeckViewerProps) {
           <Page
             pageNumber={pageNumber}
             width={containerWidth}
+            onLoadSuccess={onPageLoadSuccess}
             renderTextLayer={false}
             renderAnnotationLayer={false}
           />

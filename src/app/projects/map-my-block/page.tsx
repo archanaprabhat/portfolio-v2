@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 
@@ -12,11 +13,11 @@ const PitchDeckViewer = dynamic(() => import("@/components/PitchDeckViewer"), {
   ),
 });
 
-const PITCH_PDF = "/MapMyBlock Pitch.pdf";
+const PITCH_PDF = "/map-my-block/pitch-deck.pdf";
 const LIVE_URL = "https://map-my-block-ruby.vercel.app/";
 const GITHUB_URL = "https://github.com/archanaprabhat/map_my_block";
-const HACKATHON_VIDEO = "/mmb_video.mp4";
-const HOST_FEATURE_IMAGE = "/mmb_host.png";
+const HACKATHON_VIDEO = "/map-my-block/video.mp4";
+const HOST_FEATURE_IMAGE = "/map-my-block/host-feature.webp";
 
 export const metadata: Metadata = {
   title: "Map My Block — Census India HLO Map Generator",
@@ -47,30 +48,10 @@ export default function MapMyBlockPage() {
         Map My Block — Census India HLO Map Generator
       </h1>
 
-      <div className="mb-8 overflow-hidden rounded-xl border border-gray-300 bg-gray-100">
-        <img
-          src="/map-my-block/hackathon-top-50.png"
-          alt="Map My Block listed among notable projects in the Top 50"
-          className="h-auto w-full object-contain"
-        />
-      </div>
-
-      <div className="mb-8 space-y-4 text-gray-1200 leading-relaxed">
-        <p>
-          <strong>Map My Block</strong> (team <strong>Lone Cartographer</strong>) is a Census India HLO map
-          generator we built for the hackathon—turning census / HLO inputs into maps you can explore and
-          present.
-        </p>
-        <p>
-          Our submission was recognized as a <strong>notable project in the Top 50</strong> on NamasteDev,
-          with the demo, pitch deck, and write-up below—the same materials we used for judging.
-        </p>
-      </div>
-
       <div className="mb-3">
         <h2 className="text-lg font-medium text-gray-1200">Hackathon demo</h2>
       </div>
-      <div className="mb-8 overflow-hidden rounded-xl bg-black">
+      <div className="mb-3 overflow-hidden rounded-xl bg-black">
         <video
           controls
           className="w-full"
@@ -81,22 +62,11 @@ export default function MapMyBlockPage() {
           Your browser does not support the video tag.
         </video>
       </div>
-
-      <div className="mb-3">
-        <h2 className="text-lg font-medium text-gray-1200">Featured on the results stream</h2>
-        <p className="mt-2 text-gray-1100 leading-relaxed">
-          While walking through the Top 50 on the NamasteDev hackathon results livestream, the host called out{" "}
-          <strong>Map My Block</strong> (team Lone Cartographer) on screen—alongside the full notable-projects
-          list.
-        </p>
-      </div>
-      <div className="mb-8 overflow-hidden rounded-xl border border-gray-300 bg-gray-100">
-        <img
-          src={HOST_FEATURE_IMAGE}
-          alt="NamasteDev hackathon host highlighting Map My Block in the Top 50 notable projects"
-          className="h-auto w-full object-contain"
-        />
-      </div>
+      <p className="mb-8 text-sm text-gray-1000 leading-relaxed">
+        Heads up: I had a 4-minute limit for this video and very much went over, so I sped it up a lot to fit.
+        It&apos;s basically gibberish at that speed—try dropping the playback speed if you want to actually
+        follow along.
+      </p>
 
       <div className="mb-3">
         <h2 className="text-lg font-medium text-gray-1200">Pitch deck</h2>
@@ -106,6 +76,50 @@ export default function MapMyBlockPage() {
       </div>
       <div className="mb-8">
         <PitchDeckViewer fileUrl={encodeURI(PITCH_PDF)} />
+      </div>
+
+      <div className="mb-3">
+        <h2 className="text-lg font-medium text-gray-1200">Top 50 out of 3,000+ submissions</h2>
+      </div>
+      <div className="mb-8 overflow-hidden rounded-xl border border-gray-300 bg-gray-100">
+        <Image
+          src="/map-my-block/hackathon-top-50.png"
+          alt="Map My Block listed among notable projects in the Top 50"
+          width={1024}
+          height={480}
+          className="h-auto w-full object-contain"
+        />
+      </div>
+
+      <div className="mb-3">
+        <h2 className="text-lg font-medium text-gray-1200">Featured on the results stream</h2>
+        <p className="mt-2 text-gray-1100 leading-relaxed">
+          While walking through the Top 50 on the hackathon results livestream, the host called out{" "}
+          <strong>Map My Block</strong> on screen—alongside the full notable-projects list.
+        </p>
+      </div>
+      <div className="mb-8 overflow-hidden rounded-xl border border-gray-300 bg-gray-100">
+        <Image
+          src={HOST_FEATURE_IMAGE}
+          alt="Hackathon host highlighting Map My Block in the Top 50 notable projects"
+          width={1917}
+          height={1080}
+          className="h-auto w-full object-contain"
+        />
+      </div>
+
+      <div className="mb-8 space-y-4 text-gray-1200 leading-relaxed">
+        <p>
+          Okay so the why behind this is pretty simple. My sister is a Census HLO agent—basically a census
+          enumerator—and everything about her job was manual. Like actual paper-and-pen manual. I just wanted
+          to make her life easier, so I built this to automate it. That&apos;s the whole story, honestly, and
+          it&apos;s all in the demo video anyway.
+        </p>
+        <p>
+          Built this (team name: <strong>Lone Cartographer</strong>, because it was just me, lol) at a
+          hackathon, and out of 3,000+ submissions it made it to the <strong>Top 50</strong>. That genuinely
+          means a lot, and getting called out on the results livestream for it was unreal.
+        </p>
       </div>
 
       <div className="mb-8 flex flex-wrap gap-3">

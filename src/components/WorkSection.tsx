@@ -74,12 +74,12 @@ const careerItems: WorkItem[] = [
             title: "Software Development Engineer",
             company: "Vymo",
             media: [
-                { src: "/vymo/1st fulltime job flexing.jpg", caption: "1st fulltime job flexing" },
+                { src: "/vymo/1st-fulltime-job-flexing.jpg", caption: "1st fulltime job flexing" },
                 { src: "/vymo/IMG-20240816-WA0008.jpg", caption: "Diwalii🪔" },
                 { src: "/vymo/PXL_20240808_082114988.RAW-01.COVER.jpg", caption: "work lunch" },
-                { src: "/vymo/messy workspace.jpg", caption: "messy workspace" },
-                { src: "/vymo/staying late.jpg", caption: "staying late" },
-                { src: "/vymo/watching all onboarding vdos.jpg", caption: "watching all onboarding vdos" },
+                { src: "/vymo/messy-workspace.jpg", caption: "messy workspace" },
+                { src: "/vymo/staying-late.jpg", caption: "staying late" },
+                { src: "/vymo/watching-all-onboarding-vdos.jpg", caption: "watching all onboarding vdos" },
             ],
             description: "As part of the engineering team at Metaz, I contributed to a large-scale microservices ecosystem built for Vymo, powering HDFC Bank’s bank-wide collections platform. I worked across both frontend and backend in a mission-critical fintech environment where stability and uptime were non-negotiable. My responsibilities included delivering feature enhancements, building performant user interfaces, and handling high-priority production issues under strict SLA requirements. I frequently diagnosed complex incidents such as distributed job failures, Kafka-driven event flow disruptions, API pipeline bottlenecks, and Airflow DAG breakdowns, restoring system reliability in live environments. I developed secure REST APIs using Node.js and Express.js, implementing authentication and authorization using JWT, OAuth, and Passport.js with robust session handling. I also worked on data pipelines across MongoDB, MySQL, and Elasticsearch to support digital payment reporting and operational analytics. Close collaboration with client and internal teams through agile ceremonies, Jira tracking, and disciplined Git workflows ensured consistent, high-quality releases.",
             techStack: "JavaScript(ES6), TypeScript, React.js, Node.js, Express.js, Microservices, REST APIs, JWT, OAuth, MongoDB/Mongoose, Airflow, SFTP, WebSockets, Version control(Git), Jira, Agile Scrum teams"
@@ -109,7 +109,7 @@ const careerItems: WorkItem[] = [
         company: "Glowtouch",
         date: "Mid 2023",
         category: "career",
-        preview: "/glowtouch/GLOWTOUCH logo.webp",
+        preview: "/glowtouch/glowtouch-logo.webp",
         description: "Interned during college",
         modalData: {
             title: "SDE Intern",

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 
@@ -31,9 +32,11 @@ export default function BypassingPaywallPage() {
       </h1>
 
       <div className="mb-8 overflow-hidden rounded-xl bg-gray-100 border border-gray-300">
-        <img
+        <Image
           src="/manorama.webp"
           alt="Manorama Vulnerability Demonstration"
+          width={1384}
+          height={778}
           className="w-full h-auto object-contain rounded-xl"
         />
       </div>

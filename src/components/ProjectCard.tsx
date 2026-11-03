@@ -78,7 +78,13 @@ export default function ProjectCard({
       >
         <div className="relative flex aspect-[192/100] w-full items-center justify-center bg-gray-100 overflow-hidden border-b border-gray-300">
           {imageSrc ? (
-            <Image src={imageSrc} alt={title} fill className="object-cover" />
+            <Image
+              src={imageSrc}
+              alt={title}
+              fill
+              sizes="(max-width: 640px) 100vw, 346px"
+              className="object-cover"
+            />
           ) : (
             <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl shadow-custom border border-gray-300 bg-gray-200">
               <span className="text-2xl">{emoji}</span>

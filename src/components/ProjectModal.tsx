@@ -123,6 +123,8 @@ export default function ProjectModal({
                   <img
                     src={demoImage}
                     alt={title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-auto object-contain rounded-xl"
                   />
                 </div>
@@ -139,6 +141,8 @@ export default function ProjectModal({
                     <img
                       src={awardImage}
                       alt="Hackathon recognition"
+                      loading="lazy"
+                      decoding="async"
                       className="h-auto w-full object-contain"
                     />
                   </div>
