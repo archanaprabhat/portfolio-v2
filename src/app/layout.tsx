@@ -30,8 +30,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Archana Prabhath",
-    description:
-      "Full-Stack Engineer creating web experiences",
+   description: "Building thoughtful software through great engineering, curiosity, and attention to detail.",
     url: siteURL,
     siteName: "Archana Prabhath",
     type: "website",

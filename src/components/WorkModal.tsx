@@ -1,9 +1,10 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import PitchDeckViewer from "./PitchDeckViewer";
 
 export interface WorkMediaItem {
   src: string;
@@ -15,6 +16,7 @@ export interface WorkModalData {
   company: string;
   isStealth?: boolean;
   media?: WorkMediaItem[];
+  pdfUrl?: string;
   description?: string;
   techStack?: string;
 }
@@ -151,6 +153,12 @@ export default function WorkModal({ isOpen, onClose, data }: WorkModalProps) {
                   )}
                 </div>
               ) : null}
+
+              {data.pdfUrl && (
+                <div className="mb-8">
+                  <PitchDeckViewer fileUrl={encodeURI(data.pdfUrl)} />
+                </div>
+              )}
 
               {/* Description Section */}
               {data.description && (

@@ -99,7 +99,7 @@ export default function Home() {
           Icon={Youtube}
         />
         <SocialLink
-          href="https://www.linkedin.com/in/archanaprabhat"
+          href="https://www.linkedin.com/in/archana-tk/"
           label="LinkedIn"
           Icon={FaLinkedin}
         />
