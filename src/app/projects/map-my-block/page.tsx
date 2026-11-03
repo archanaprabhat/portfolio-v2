@@ -45,7 +45,7 @@ export default function MapMyBlockPage() {
       </div>
 
       <h1 className="mb-6 text-2xl font-medium leading-tight text-gray-1200">
-        Map My Block — Census India HLO Map Generator
+        Map My Block: Census India HLO Map Generator
       </h1>
 
       <div className="mb-3">
@@ -64,7 +64,7 @@ export default function MapMyBlockPage() {
       </div>
       <p className="mb-8 text-sm text-gray-1000 leading-relaxed">
         Heads up: I had a 4-minute limit for this video and very much went over, so I sped it up a lot to fit.
-        It&apos;s basically gibberish at that speed—try dropping the playback speed if you want to actually
+        It&apos;s basically gibberish at that speed, try dropping the playback speed if you want to actually
         follow along.
       </p>
 
@@ -95,7 +95,7 @@ export default function MapMyBlockPage() {
         <h2 className="text-lg font-medium text-gray-1200">Featured on the results stream</h2>
         <p className="mt-2 text-gray-1100 leading-relaxed">
           While walking through the Top 50 on the hackathon results livestream, the host called out{" "}
-          <strong>Map My Block</strong> on screen—alongside the full notable-projects list.
+          <strong>Map My Block</strong> on screen alongside the full notable-projects list.
         </p>
       </div>
       <div className="mb-8 overflow-hidden rounded-xl border border-gray-300 bg-gray-100">
@@ -110,8 +110,8 @@ export default function MapMyBlockPage() {
 
       <div className="mb-8 space-y-4 text-gray-1200 leading-relaxed">
         <p>
-          Okay so the why behind this is pretty simple. My sister is a Census HLO agent—basically a census
-          enumerator—and everything about her job was manual. Like actual paper-and-pen manual. I just wanted
+          Okay so the why behind this is pretty simple. My sister is a Census HLO agent,basically a census
+          enumerator, and everything about her job was manual. Like actual paper-and-pen manual. I just wanted
           to make her life easier, so I built this to automate it. That&apos;s the whole story, honestly, and
           it&apos;s all in the demo video anyway.
         </p>

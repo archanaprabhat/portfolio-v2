@@ -19,18 +19,6 @@ type WorkItem = {
 
 const careerItems: WorkItem[] = [
     {
-        id: "lascade",
-        title: "Software Product Engineer",
-        company: "Lascade",
-        category: "career",
-        preview: "/lascade.jpeg",
-        description: "Product owner from scratch to end, roadmap to release",
-        modalData: {
-            title: "Software Product Engineer",
-            company: "Lascade",
-        },
-    },
-    {
         id: "asteriscus",
         title: "SDE",
         company: "Asteriscus",
@@ -44,6 +32,19 @@ const careerItems: WorkItem[] = [
             description: "Currently, I am part of the founding engineering team at Asteriscus, building digital in-transit media systems for public transport with full over-the-air control. I work across the stack, developing advertiser-facing web platforms that support creative uploads, campaign scheduling, real-time device monitoring, and reach analytics. Beyond frontend development with React and Next.js, I handle backend services in Golang and contribute to end-to-end hardware-software integration across embedded Linux environments. My responsibilities include device provisioning, modem and network configuration, OTA update pipelines, and system reliability across distributed edge devices. I’ve worked extensively with Dockerized deployments and Kafka-based event pipelines, while implementing observability using Prometheus, Grafana, and Loki. Infrastructure and delivery workflows are managed through Terraform, Cloudflare, CI/CD pipelines, and system-level tooling including systemd and shell scripting. As a founding team member, I also contribute to product direction, testing, on-ground installations, investor demos, and operational execution.",
             techStack: "React.js, Next.js, JavaScript, Tailwind CSS, Golang, Linux, Docker, Kafka, SQLite, Prometheus, Grafana, Loki, Terraform, Cloudflare, CI/CD, NetworkManager/ModemManager, Rockchip boards, Raspberry Pi, systemd, Shell scripting."
         }
+    },
+    {
+        id: "lascade",
+        title: "Software Product Engineer",
+        company: "Lascade · Independent Contractor",
+        date: "Jul 2025 - Nov 2025",
+        category: "career",
+        preview: "/lascade.jpeg",
+        description: "Product owner from scratch to end, roadmap to release",
+        modalData: {
+            title: "Software Product Engineer",
+            company: "Lascade · Independent Contractor",
+        },
     },
     {
         id: "people-ai",
